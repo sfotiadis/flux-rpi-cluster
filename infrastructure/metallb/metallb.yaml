@@ -1,0 +1,24 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: metallb
+  namespace: flux-system
+spec:
+  interval: 30m
+  url: https://github.com/metallb/metallb
+  ref:
+    tag: v0.15.2
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: metallb
+  namespace: flux-system
+spec:
+  interval: 30m
+  path: "./config/native"
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: metallb
