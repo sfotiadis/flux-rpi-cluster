@@ -1,0 +1,3 @@
+creation_rules:
+  - path_regex: .*\.enc\.yaml$
+    pgp: "7840BE420F2CAC6198A37FDE1D3C9F37F60FEF0B"
