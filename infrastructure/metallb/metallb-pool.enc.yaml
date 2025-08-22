@@ -1,34 +1,34 @@
-apiVersion: ENC[AES256_GCM,data:fRf9S4efTfeZLlHdypBiUyDe,iv:MudfFgtwbq+Y6Hr/A27IOWsyw5L8mUR+AqyfHw80tyI=,tag:oSiSYeOgdp9mAYGTxRG42w==,type:str]
-kind: ENC[AES256_GCM,data:KXcqAwtVnx8nr+4a+Q==,iv:Fn9P2l2luuhPtz09vlwoUx7BBhfXxECuefGsascZQTM=,tag:tjH1btRWfZJkfUDe97ZsMw==,type:str]
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
 metadata:
-    name: ENC[AES256_GCM,data:1VTCdXOQsMdQRosS,iv:U3aFm5IccUzHFm9TuMQRsdlnhEyWOIcQszRG1eHm7po=,tag:yb3wjiH6b1GLMPpI/8k9tA==,type:str]
-    namespace: ENC[AES256_GCM,data:sxXzTPnWeGl2SvbYet4=,iv:Eqe9u/yn49+7lfhyAacAsXWeLJr0JI6AfILoGe2zR2k=,tag:8ZD10ihs0xVB/HN1B8+L/A==,type:str]
+    name: default-pool
+    namespace: metallb-system
 spec:
     addresses:
-        - ENC[AES256_GCM,data:eeOoq91uNaTArnZEQqgvqjY6Y2lCMC4EpiQSTM0=,iv:H8q9z2KmRH3DO/4SYSIF7r0AdpgOn9vTlZR/rTZB3U0=,tag:38A/GOs/YMzsfLV3M5Xzlw==,type:str]
+        - ENC[AES256_GCM,data:0pw6Mro7LPiq0EtU9CbfCkJWTmrV7G1G0qAQ,iv:yh/phPDV3pwcbe0CecGSYfCsrR/+1UOknsw9qnUjOK0=,tag:dUNKB9KUfCWzWpRXnXIMbw==,type:str]
 sops:
-    lastmodified: "2025-08-22T16:14:31Z"
-    mac: ENC[AES256_GCM,data:3b1HsaPxjGgcThCGyNMB+EwN1xDMf9hfFrVPOlf0dstwYoDDl/Nuc2TeLHji8Z7AgCh8wibCIBxoQ+Z+7bUu0i+t1gMCxSf8xIlCaBC/6idpGWM5Ne7YNqvDa2/LM4ug8xyAZ8R7gxVFtqj0uH8fsNBqFoXg56kh6FWzx15bA/M=,iv:UypcgJGTv4PYc3eJ1qJ118eipRFh6IXd1M3zpyDVh1M=,tag:7z/zHwcFhWtX2Bp/ZAxZqQ==,type:str]
+    lastmodified: "2025-08-22T16:40:20Z"
+    mac: ENC[AES256_GCM,data:QeWy33cwvuSlHinfd9klZNLYEBv4f6N+dVkI1sm3Xmn1tXdZGHTjBZkKUJbZT/sqJLlHSuVrGN6s1Q1yO0PUajQbs0lkWS9B5I/IEWG0VFgqxVXPFctGkK6QbwsPrep5dIBd+ntbRs0qJ32vGye62UBFM9HEKLOA+00dmrs1fPA=,iv:hE3f56rLsZRsfiDH278FvUztQ5LL/NbuvOamiDItgkE=,tag:J2XOeVTIMWdgPOqgU+sCeg==,type:str]
     pgp:
-        - created_at: "2025-08-22T16:14:31Z"
+        - created_at: "2025-08-22T16:40:20Z"
           enc: |-
             -----BEGIN PGP MESSAGE-----
 
-            hQIMA17PYeqLyQPSARAAywXw6s8a3Ebjn6TqV8+x/wf9CWMh7qxNU3zQojnTg3VT
-            9ah+7GoqWixHFQWmtqIWOVLUg2OZbEh0xI9fz9bc3UjeNHpWF35eL6c0yE/xnGNr
-            j7NFYvaW7CE4bda9rfPMQdXypqkrDhi86s7unOjvNyzZPxlGtGHjMnn8YJKJWzrj
-            phxFObH5dWjudeg8NClr4QLOZdAzjPChw4cTdL5+/+cYr5dEEJfba7Y34ejJpgGA
-            VnvtCqOLMzaXEP3SqIMIfVn9SD2efgzavorOQimFbkt4bve/MT/BfEn3mXpWR4xN
-            pes3G9TD17RfHby5HKkUnXrIG6fEpStdSnbTI19EwJZXrJxXfi/2s0t4uc95daAl
-            Cr0X8aVR1hVGhVfdp+0jKXz+lEuk71XZLp0YtVvwtm7G3BHk273kHua1MamzkZIT
-            5lI5g15kV8ghhiRKqRoCsX1YkI4kEMGHqZZeAzAiiGXu5NRQWen9tS0erXNcqO/T
-            rvv5wSP9fzi88sOKp7TaqrLIVuS2kxvfcbcvOHG5kgXdxizo3RN0l6g3ZnEZgrF5
-            b3d3PViEzJbzWFPpqve56QF+Xtd61VV7cUTp5QuSOLjgkT/eaI5JwuRQ8d6iAxzZ
-            GtANmBeGlxmEqd3cQz3IeGYUVRml1AT60L2JIUiXG81zCRB6QVVUV4nrIIcV4SHS
-            XgE3IVx5ZrqEEFubv6sk50y+CQwO8XwrOgA4g3eIxHaHnP7Qed8vidfkpKKIXm8N
-            lpA4H4mPjUAxRcy68XtEyThcczjGvLhwT2vzHdEePMLHjrXteEylOa5PRQfG7FY=
-            =4EDm
+            hQIMA17PYeqLyQPSARAArepCzLI9bTSSbXjZpbYrvjc91mkJ+PaZaTS1khDm1V46
+            i7mrbVUF0jaigitGIcvP4eYJwbid9mYTpDu+JzXQEil+Pb+DO/ZJmvGg9CDtdYev
+            RR7xQwHJKTiQ9T5RjJY9uXm2cZ7MtxgSbjacsAmiUHH/RWewPHgfrXAClMpu9XOm
+            EY3TE4t9h6Bdlo8q3IT26oyWIUbwC228H+lRnMs30K3NgOPyF0BWTmybfJbuSCeq
+            Sr8TiBJSekIjvGbMAE8HJVXHqwS4OTIpnvNaN38iFE2pM01A/Y509nX6BFdJ3M3F
+            MNs6+8nBZCth846wv7IeL8YAHsFd+/R5TubHszsa9R3/jWnwY9FNjmridVLOp8x7
+            KBPQbLU4gekXkEIH5QDEgfUGhM/OMuUsJVOR+tU7eOaEo/6vy46Spuxwieh2L/up
+            U1h9v6j+5EDOjOVY9/yQrAee3THu0LBDXymwB2DP47285p8u/rzlf21JhFxmIi7i
+            J3PUTAwv0STM3gI5G5RqDPMrVWzoSdqm1xYMxUvI31puSwCVxGv6l2rxz90o2uk+
+            w4yaW2OB6GgZhPylMcPHFEz0JRaurCRO8GubF3I7C5NFyBY5mFvI10uLp+tNtPJb
+            ZlpY4V8mOd9ZmtvG74QL1V+/6CGj9TvcT5AibHhlnFfU8QAqMmxmVTZyeDZY85DS
+            XgH4FUWlZkrqW4rrahrLx56smfTPQ+g9PL1L6zRikBUaUbz1mWaS6pmj4dyxQq9a
+            o/AQo6OACm5QnlWz0BvWj7n/NXa6ed9jXBV4lyF9nmmW2gwe9gdU078AvXSolwM=
+            =m6T+
             -----END PGP MESSAGE-----
           fp: CFEB9CF1BBFB6A79F2CD7DF90A421F34D04D10E2
-    unencrypted_suffix: _unencrypted
+    encrypted_regex: ^(data|stringData|addresses)$
     version: 3.10.2
