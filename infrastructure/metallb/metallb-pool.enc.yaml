@@ -1,14 +1,14 @@
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
-    name: default-pool
+    name: metallb-pool
     namespace: metallb-system
 spec:
     addresses:
         - ENC[AES256_GCM,data:9FKTX9FYRZun5frA20WeJ9IuzKYaqjPW/2CriG4=,iv:Swe4QR6GhRPmM9OxanTvvtCBUzoD35d1vE71gFcxu78=,tag:3KC9XcEe7jkkXpZxiUeJ0w==,type:str]
 sops:
-    lastmodified: "2025-08-22T17:48:05Z"
-    mac: ENC[AES256_GCM,data:q/uLRiUkCz9ynT8FO2ipCnBcBc7LfRTvpCcNQfqkEKMIxtaJ8rPw5nxXZyzvmcx8uTYsICoaI6ogHnhaPHpcHUfKp1hLYho1zsYpyPiO46XVTUkYqJtfdOuKJ+gtn1lzFkwoxQ++KmIjNuP2agZcWFPX36hPXaMUKRucT5t5BFs=,iv:A3sUA6xu1MYmQNTww0bMRMUMKh0A9a1gkng0tMvUGzE=,tag:C4AKWagnKnlpDXfsuw3Tng==,type:str]
+    lastmodified: "2025-08-22T18:25:40Z"
+    mac: ENC[AES256_GCM,data:SWSt8R6jkwtcYyF3W0mzIFyJ+bnUNVQFzhRaps8hzoB5SZHJthDjhDWJTLx4dW1L1n+imB+2XhewKnn9tk+OowWZRd9IGgHbQb34rCX0sXdDvMzmlrs82Hfeh6hxoLkN56OjW4MkrN2hoT4j3SxIy4094jUi4eKsbQwRskYWngM=,iv:b2doxItp6yjLup9jN4mQQ99/13LHhrOQJzv+zpTbZmg=,tag:vYyEsXdhaj+K6vFcHl7LKg==,type:str]
     pgp:
         - created_at: "2025-08-22T16:40:20Z"
           enc: |-
