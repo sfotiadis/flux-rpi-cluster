@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: grafana-values
+    namespace: grafana
+data:
+    values.yaml: ENC[AES256_GCM,data:npjzCKADzcoDbHPpY2ckDp6fo12c5xwlzpDBrgHBYk/R0TDPNL7i3JnUDCdwR902+t+gPk0Hzt2s86WtX3Zu2md5F4Xshgsv1aza/olUUCh9BYGuNSQzYJCSRit0EmvyJNyps1NoM4cUaDv8IepwMbikDE/UTo1Kfco4NsGfOrtHhzjAQEVFTuIe5sJeOesEQ/jqBxv1zGtmNBCyLWz2dKg1hs8745hFBgvhOcpkk+38+n0Q6ay/X2/u3PnzLJwp69Vu7QxBzm3rIYmvVExLf88fTaXBWrpmtKNw4tXQaTz4EIssdTmlxdyhkgTCebdyEuwsajUI8Hoj8TDEKe3RYdun7/Hr4UbkFxMQHZebHxvstdt/lYp+lA+ERfuDHficLY99shQ96FSHlvrCqDwx6UtpfvqUkgxxjQ/o1rEvjD0vbwSV7RrQsI3ZubIQN5Gjp3pHAHFPRCjyP3iLLzQzEr6uwKrl2WywHLH2/6R9I+XH/RXApE6YEf59xp5Cas8oBVPL+SI2i2wQVO8M91Ed+SIu+4R9c8ASQ6AgRO9AfzhPrJzBI+HrSw0wYr1KMadPxJUbRiFK2D+Kmoa2gmghluVm/wxft9RhlakhkCNKloI=,iv:gBM7Jkp3l+z48SlFmbj8vwl0Fg5tOJC4WWhtlkqBkN0=,tag:jOdPjrsjQOad48wdeJXAJQ==,type:str]
+sops:
+    lastmodified: "2025-08-23T08:47:28Z"
+    mac: ENC[AES256_GCM,data:jJUPpJqpOqNM8LMDgZjmAUzwUPuGG9kjHjybOVoIOG7t6jI5IPLuOWfEepfkeEOMVbE3XSoIvgp0osokehvaJjhTGrsMngkMpyBsYV3cXnIxAYZmppOOEPB5R8M//eNuLVdC0+DArJkvpR0xWp/IkBr+sPH8t5NV0I81LCquTLk=,iv:ztFnBPeUDsNSx1soA1OM3XvOK3T4maXpHDm8B6Ypcuk=,tag:LikmHgSjam5STL2dsQ+lIQ==,type:str]
+    pgp:
+        - created_at: "2025-08-23T08:31:35Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA17PYeqLyQPSAQ//RYikVohgm1anDJzrX/HPTU6Wg7iNs/3KTv/YJ9CcDl4m
+            YVZkxltl5mow2tvmJEMh7zbRfbV12a+UYMbFHPkSSBURFriC2EAs/jLURSpYaZAE
+            jM2ZhTiA+uIrjmA171hZIxuDctHC0MSkRUY1Nwlyl98nZkXN1J6G4OXU3PJGO5hV
+            pHVjoqNwaAJFtpWR/qDKqFuRKZ+6rX0lLTeD7ZP2HyyDZyvDxinfevRdy+6NmnLt
+            5HMIMJgvhd//Y/dVSwaNn8vaCLkAyLMc3r8jO2+/Vh4j0FlGRzMLny9aOnZUKqtf
+            6vqGkT/YgUsRjix7F6yZvHgEXky6m6jnbT4nyTyJgbIW3RcS/wPKqHlEz1TXrwyj
+            30GKqw66F7EkkROS77J3Ks3Mm2NCtMQ3dATIO79tiVAlVRKhN4pEPKR1OyHcSIM2
+            h7xXJ9UjymLHPkq5LN9NrBI5/SpkIM37WAWL2oHtkXz2EbCgvjKEJlPvRq0R1ITl
+            HuRzWUbnrYsXpb/zCpB1mCCm9Js5Rmj5xQdnf4MigLo2c/WIEECSWWHKFccpCF2X
+            jgY7sYJkzVN+/0F2sApllc7ZF/0xprXnl7HVhmlaEf/8tbX4i9XImFyKDDKfCsQq
+            ycr3dsENvw/5ML3MyYu02vB7h6oMwBiC1VU92fes2oq/H7NOn4Ml/Du7qXATvzbS
+            XgEZqSrO409RARRjwbtifxh3P3x4t4Zg1ToP2O27O+7MflpPUzH/ur/5ySO3ROSX
+            q2F85rTsY0kIkAabzBzOhNxZOlse7/Uwwz1KYHcbjxz+l8E/Hijb7bWlg4CCQQU=
+            =d99R
+            -----END PGP MESSAGE-----
+          fp: CFEB9CF1BBFB6A79F2CD7DF90A421F34D04D10E2
+    encrypted_regex: ^(data|stringData|addresses)$
+    version: 3.10.2
