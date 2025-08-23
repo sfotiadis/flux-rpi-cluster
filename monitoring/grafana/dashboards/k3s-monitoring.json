@@ -44,7 +44,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "aebnunfbwdw5cf"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
