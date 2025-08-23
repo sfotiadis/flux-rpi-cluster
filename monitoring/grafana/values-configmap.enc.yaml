@@ -4,10 +4,10 @@ metadata:
     name: grafana-values
     namespace: grafana
 data:
-    values.yaml: ENC[AES256_GCM,data:npjzCKADzcoDbHPpY2ckDp6fo12c5xwlzpDBrgHBYk/R0TDPNL7i3JnUDCdwR902+t+gPk0Hzt2s86WtX3Zu2md5F4Xshgsv1aza/olUUCh9BYGuNSQzYJCSRit0EmvyJNyps1NoM4cUaDv8IepwMbikDE/UTo1Kfco4NsGfOrtHhzjAQEVFTuIe5sJeOesEQ/jqBxv1zGtmNBCyLWz2dKg1hs8745hFBgvhOcpkk+38+n0Q6ay/X2/u3PnzLJwp69Vu7QxBzm3rIYmvVExLf88fTaXBWrpmtKNw4tXQaTz4EIssdTmlxdyhkgTCebdyEuwsajUI8Hoj8TDEKe3RYdun7/Hr4UbkFxMQHZebHxvstdt/lYp+lA+ERfuDHficLY99shQ96FSHlvrCqDwx6UtpfvqUkgxxjQ/o1rEvjD0vbwSV7RrQsI3ZubIQN5Gjp3pHAHFPRCjyP3iLLzQzEr6uwKrl2WywHLH2/6R9I+XH/RXApE6YEf59xp5Cas8oBVPL+SI2i2wQVO8M91Ed+SIu+4R9c8ASQ6AgRO9AfzhPrJzBI+HrSw0wYr1KMadPxJUbRiFK2D+Kmoa2gmghluVm/wxft9RhlakhkCNKloI=,iv:gBM7Jkp3l+z48SlFmbj8vwl0Fg5tOJC4WWhtlkqBkN0=,tag:jOdPjrsjQOad48wdeJXAJQ==,type:str]
+    values.yaml: ENC[AES256_GCM,data:pulOf1kirROdk1E9YFxv41pNAWdSftELs7vnB2slqC+n17tFOsygdsZ5Mb1wtt0F96rDkXdNEs4c1pfOsPoMAqG5vEJOsk9xY+yWzAsLPNerUtHOjJZjtO1hLVqWsmlxSIzKpaT6r0obTaMC5FPCFSKPyrxNFnNBaBICV3Xg+BxUX1EkYmFGtuLhoZcEgHl7aZug+koqF2XT644YyewZ11uk3nFhb4mDiWfMDp4mbQQEHw0j9JTgTeiDdqp/MOk8FiudqZS69KtpvPBSN+cvJGC8Z2EheOou71aLAWRTtCWDsMvLzPEBqsDTUJmhSGBJ/obLoFhd4WkgktrHEiGn80yVhZvd0onee3rJ2WfN2lafdg5mMJXg/DQYYG8BZVA4dLyGAiR+huZeEbezPmu+UEOxQgfzJlzPCBgfpkKRmbThQ6kX0MWqp4+O0YdDOPnx9Wl0Pbd78rTnrnl2hCdlJW1farcNUCk3omMqqzoq8pDQS5m71jyj+4ntKOfuxpzusocUXcR81PLqu3cAAX3zULolkBJgezv5h82zE8UqetxbH+YqvbPG1KLd6UAOsjFDkhu82+nXBO1oOBBVqUGSKaU1cebCCDudcHleL7GhEZONSECAbFtatNXjWqf5LCy8TFYGmGI8F1g=,iv:T0GWc8MBlV4IhPQtqjzEw2+ZgTPRIIkqjYdNWoXXjc8=,tag:aKRRu9nGx6V2q3ZhyAOu6g==,type:str]
 sops:
-    lastmodified: "2025-08-23T08:47:28Z"
-    mac: ENC[AES256_GCM,data:jJUPpJqpOqNM8LMDgZjmAUzwUPuGG9kjHjybOVoIOG7t6jI5IPLuOWfEepfkeEOMVbE3XSoIvgp0osokehvaJjhTGrsMngkMpyBsYV3cXnIxAYZmppOOEPB5R8M//eNuLVdC0+DArJkvpR0xWp/IkBr+sPH8t5NV0I81LCquTLk=,iv:ztFnBPeUDsNSx1soA1OM3XvOK3T4maXpHDm8B6Ypcuk=,tag:LikmHgSjam5STL2dsQ+lIQ==,type:str]
+    lastmodified: "2025-08-23T09:06:27Z"
+    mac: ENC[AES256_GCM,data:fbOxO5cPRRX62nlYtyrGZ7SVC6X6jsQM4sFx5e6jSnqZRzdsii1XW1425R1TWTf6P+nLIEoyxnbdfTGhkN+XnL7YcNpJRU+u8rmEsvPp8dsm7/0Xhq0naKuinBGkpLJNH4kO+diy+tp2TAebbns72xyxGSJQ+xL+WVgPWuRhLx8=,iv:4c9tDde+zXGcOZ5kL8KnEkg9bRwQNZDaSLMfseJBwbA=,tag:F2kVxT8MID8segJXbssBxA==,type:str]
     pgp:
         - created_at: "2025-08-23T08:31:35Z"
           enc: |-
