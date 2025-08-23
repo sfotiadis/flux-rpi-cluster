@@ -4,3 +4,4 @@ resources:
   - metallb
   - cert-manager
   - jetstack-repository.yaml
+  - kube-system-patch.yaml
