@@ -1,0 +1,61 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: general-rules
+  namespace: monitoring
+  labels:
+    role: alert-rules
+spec:
+  groups:
+  - name: general.rules
+    rules:
+
+    # Node health
+    - alert: NodeDown
+      expr: up{job="node-exporter"} == 0
+      for: 2m
+      labels:
+        severity: critical
+      annotations:
+        summary: "Node {{ $labels.instance }} is down"
+        description: "The node exporter on {{ $labels.instance }} has not responded for 2 minutes."
+
+    # CPU usage
+    - alert: HighCPUUsage
+      expr: 100 - (avg by(instance)(irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 90
+      for: 5m
+      labels:
+        severity: warning
+      annotations:
+        summary: "High CPU usage on {{ $labels.instance }}"
+        description: "CPU usage is above 90% for the last 5 minutes."
+
+    # Memory usage
+    - alert: HighMemoryUsage
+      expr: (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100 > 90
+      for: 5m
+      labels:
+        severity: warning
+      annotations:
+        summary: "High memory usage on {{ $labels.instance }}"
+        description: "Memory usage is above 90% for the last 5 minutes."
+
+    # Disk usage
+    - alert: DiskAlmostFull
+      expr: (node_filesystem_size_bytes{fstype!~"tmpfs|overlay"} - node_filesystem_avail_bytes{fstype!~"tmpfs|overlay"}) / node_filesystem_size_bytes{fstype!~"tmpfs|overlay"} * 100 > 90
+      for: 10m
+      labels:
+        severity: critical
+      annotations:
+        summary: "Disk almost full on {{ $labels.instance }}"
+        description: "Disk usage on {{ $labels.instance }} ({{ $labels.mountpoint }}) is above 90%."
+
+    # Prometheus health
+    - alert: PrometheusDown
+      expr: up{job="prometheus"} == 0
+      for: 2m
+      labels:
+        severity: critical
+      annotations:
+        summary: "Prometheus instance {{ $labels.instance }} is down"
+        description: "Prometheus has not been reachable for more than 2 minutes."
