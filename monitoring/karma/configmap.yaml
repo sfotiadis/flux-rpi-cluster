@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: karma-config
+  namespace: monitoring
+data:
+  karma.yaml: |
+    alertmanager:
+      servers:
+        - name: default
+          uri: http://prometheus-alertmanager.monitoring.svc:9093
