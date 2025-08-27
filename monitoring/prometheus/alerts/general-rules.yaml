@@ -9,7 +9,13 @@ spec:
   groups:
   - name: general.rules
     rules:
-
+    - alert: AlwaysFiring
+      expr: vector(1)
+      for: 1m
+      labels:
+        severity: test
+      annotations:
+        summary: "Test alert that always fires"
     # Node health
     - alert: NodeDown
       expr: up{job="node-exporter"} == 0
