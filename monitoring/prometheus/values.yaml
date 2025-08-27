@@ -47,3 +47,9 @@ nodeExporter:
     limits:
       cpu: 100m
       memory: 128Mi
+
+additionalPrometheusRulesMap:
+  - name: flux-alerts
+    selector:
+      matchLabels:
+        role: alert-rules
