@@ -8,5 +8,18 @@ spec:
     name: github-status
   eventSeverity: info
   eventSources:
-    - kind: GitRepository
-      name: flux-system
+    - kind: Kustomization
+      name: '*'
+      namespace: flux-system
+    - kind: Kustomization
+      name: metallb
+      namespace: metallb-system
+    - kind: HelmRelease
+      name: prometheus
+      namespace: monitoring
+    - kind: HelmRelease
+      name: grafana
+      namespace: grafana
+    - kind: HelmRelease
+      name: cert-manager
+      namespace: cert-manager
