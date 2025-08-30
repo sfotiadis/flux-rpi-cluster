@@ -39,6 +39,14 @@ spec:
       prometheusSpec:
         ruleNamespaceSelector: {}
         ruleSelectorNilUsesHelmValues: false
+        serviceMonitorSelectorNilUsesHelmValues: false
+        serviceMonitorSelector:
+          matchLabels:
+            release: kube-prometheus-stack
+        serviceMonitorNamespaceSelector: {}
+        serviceMonitorRelabelings:
+          - sourceLabels: [__meta_kubernetes_node_name]
+            targetLabel: node
 
     kubeScheduler:
       enabled: false
