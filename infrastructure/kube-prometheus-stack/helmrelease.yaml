@@ -13,6 +13,10 @@ spec:
         kind: HelmRepository
         name: prometheus-community
         namespace: flux-system
+  valuesFrom:
+  - kind: ConfigMap
+    name: flux-kube-state-metrics-config
+    valuesKey: kube-state-metrics-config.yaml
   values:
     grafana:
       enabled: true
