@@ -13,6 +13,17 @@ configMapGenerator:
     options:
       labels:
         grafana_dashboard: "1"
+  - name: flux-dashboards
+    namespace: grafana
+    files:
+      - control-plane.json=dashboards/control-plane.json
+      - cluster.json=dashboards/cluster.json
+    options:
+      labels:
+        grafana_dashboard: "1"
+        app.kubernetes.io/part-of: flux
+        app.kubernetes.io/component: monitoring
+        kustomize.toolkit.fluxcd.io/substitute: disabled
   - name: flux-kube-state-metrics-config
     namespace: monitoring
     files:
