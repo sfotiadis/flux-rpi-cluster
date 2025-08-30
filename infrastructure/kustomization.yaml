@@ -4,4 +4,5 @@ resources:
   - metallb
   - cert-manager
   - kube-system-patch.yaml
+  - kube-prometheus-stack
   - notifications/github
