@@ -5,4 +5,5 @@ resources:
   - cert-manager
   - kube-system-patch.yaml
   - kube-prometheus-stack
+  - karma
   - notifications/github
