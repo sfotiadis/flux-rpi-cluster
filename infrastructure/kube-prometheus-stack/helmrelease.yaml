@@ -48,6 +48,13 @@ spec:
           - sourceLabels: [__meta_kubernetes_node_name]
             targetLabel: node
 
+    prometheus-node-exporter:
+      prometheus:
+        monitor:
+          relabelings:
+            - sourceLabels: [__meta_kubernetes_node_name]
+              targetLabel: node
+
     kubeScheduler:
       enabled: false
     kubeControllerManager:
