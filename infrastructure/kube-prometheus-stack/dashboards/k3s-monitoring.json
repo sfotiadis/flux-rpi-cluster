@@ -117,7 +117,7 @@
             "uid": "prometheus"
           },
           "exemplar": true,
-          "expr": "sum (container_memory_working_set_bytes{id=\"/\",node=~\"^$Node$\"}) / sum (machine_memory_bytes{node=~\"^$Node$\"}) * 100",
+          "expr": "sum (container_memory_working_set_bytes{node=~\"^$Node$\"}) / sum (machine_memory_bytes{node=~\"^$Node$\"}) * 100",
           "format": "time_series",
           "interval": "10s",
           "intervalFactor": 1,
@@ -295,7 +295,7 @@
             "uid": "prometheus"
           },
           "exemplar": true,
-          "expr": "sum (container_fs_usage_bytes{id=\"/\",node=~\"^$Node$\"}) / sum (container_fs_limit_bytes{id=\"/\",node=~\"^$Node$\"}) * 100",
+          "expr": "sum (container_fs_usage_bytes{node=~\"^$Node$\"}) / sum (container_fs_limit_bytes{node=~\"^$Node$\"}) * 100",
           "format": "time_series",
           "interval": "10s",
           "intervalFactor": 1,
@@ -554,7 +554,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "sum (rate (container_cpu_usage_seconds_total{id=\"/\",node=~\"^$Node$\"}[5m]))",
+          "expr": "sum (rate (container_cpu_usage_seconds_total{node=~\"^$Node$\"}[5m]))",
           "format": "time_series",
           "interval": "10s",
           "intervalFactor": 1,
@@ -722,7 +722,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "sum (container_fs_usage_bytes{id=\"/\",node=~\"^$Node$\"})",
+          "expr": "sum (container_fs_usage_bytes{node=~\"^$Node$\"})",
           "format": "time_series",
           "interval": "10s",
           "intervalFactor": 1,
@@ -806,7 +806,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "sum (container_fs_limit_bytes{id=\"/\",node=~\"^$Node$\"})",
+          "expr": "sum (container_fs_limit_bytes{node=~\"^$Node$\"})",
           "format": "time_series",
           "interval": "10s",
           "intervalFactor": 1,
