@@ -8,4 +8,4 @@ data:
     alertmanager:
       servers:
         - name: default
-          uri: http://prometheus-alertmanager.monitoring.svc:9093
+          uri: http://kube-prometheus-stack-alertmanager.monitoring.svc:9093
