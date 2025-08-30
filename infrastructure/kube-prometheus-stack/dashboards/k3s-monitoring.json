@@ -638,7 +638,7 @@
             "uid": "prometheus"
           },
           "exemplar": true,
-          "expr": "machine_cpu_physical_cores",
+          "expr": "sum (machine_cpu_physical_cores{node=~\"^$Node$\"})",
           "format": "table",
           "interval": "10s",
           "intervalFactor": 1,
