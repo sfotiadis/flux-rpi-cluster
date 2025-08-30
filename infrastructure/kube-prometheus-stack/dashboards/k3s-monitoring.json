@@ -382,7 +382,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "container_memory_usage_bytes {node=~\"^$Node$\"}",
+          "expr": "sum(container_memory_usage_bytes {node=~\"^$Node$\"})",
           "format": "table",
           "interval": "10s",
           "intervalFactor": 1,
