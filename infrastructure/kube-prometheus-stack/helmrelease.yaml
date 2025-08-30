@@ -35,3 +35,10 @@ spec:
       prometheusSpec:
         ruleNamespaceSelector: {}
         ruleSelectorNilUsesHelmValues: false
+
+    kubeScheduler:
+      enabled: false
+    kubeControllerManager:
+      enabled: false
+    kubeProxy:
+      enabled: false
