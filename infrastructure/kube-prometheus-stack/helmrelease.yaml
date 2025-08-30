@@ -48,7 +48,7 @@ spec:
           - sourceLabels: [__meta_kubernetes_node_name]
             targetLabel: node
 
-    prometheus-node-exporter:
+    node-exporter:
       prometheus:
         monitor:
           relabelings:
