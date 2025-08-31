@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: helm-controller
+  namespace: flux-system
+  labels:
+    app.kubernetes.io/name: helm-controller
+spec:
+  ports:
+    - name: http-metrics
+      port: 80
+      targetPort: http-metrics
+  selector:
+    app: helm-controller
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kustomize-controller
+  namespace: flux-system
+  labels:
+    app.kubernetes.io/name: kustomize-controller
+spec:
+  ports:
+    - name: http-metrics
+      port: 80
+      targetPort: http-metrics
+  selector:
+    app: kustomize-controller
