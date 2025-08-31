@@ -15,11 +15,8 @@ spec:
       name: metallb
       namespace: metallb-system
     - kind: HelmRelease
-      name: prometheus
+      name: '*'
       namespace: monitoring
-    - kind: HelmRelease
-      name: grafana
-      namespace: grafana
     - kind: HelmRelease
       name: cert-manager
       namespace: cert-manager
