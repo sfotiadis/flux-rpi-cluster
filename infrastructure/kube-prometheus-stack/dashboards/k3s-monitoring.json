@@ -295,7 +295,7 @@
             "uid": "prometheus"
           },
           "exemplar": true,
-          "expr": "sum (container_fs_usage_bytes{node=~\"^$Node$\"}) / sum (container_fs_limit_bytes{node=~\"^$Node$\"}) * 100",
+          "expr": "100 * (1 - sum (node_filesystem_avail_bytes{node=~\"^$Node$\"} ) / sum (node_filesystem_size_bytes{node=~\"^$Node$\"} ))",
           "format": "time_series",
           "interval": "10s",
           "intervalFactor": 1,
@@ -722,7 +722,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "sum (container_fs_usage_bytes{node=~\"^$Node$\"})",
+          "expr": "sum (node_filesystem_size_bytes{node=~\"^$Node$\"} ) -  sum (node_filesystem_avail_bytes{node=~\"^$Node$\"} )",
           "format": "time_series",
           "interval": "10s",
           "intervalFactor": 1,
@@ -806,7 +806,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "sum (container_fs_limit_bytes{node=~\"^$Node$\"})",
+          "expr": "sum (node_filesystem_size_bytes{node=~\"^$Node$\"})",
           "format": "time_series",
           "interval": "10s",
           "intervalFactor": 1,
