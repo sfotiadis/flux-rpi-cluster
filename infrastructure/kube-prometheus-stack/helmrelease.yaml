@@ -37,6 +37,19 @@ spec:
 
     prometheus:
       prometheusSpec:
+        additionalScrapeConfigs:
+          - job_name: 'node-exporter'
+            honor_labels: true
+            kubernetes_sd_configs:
+              - role: pod
+            relabel_configs:
+              - source_labels: [__meta_kubernetes_pod_label_app_kubernetes_io_name]
+                action: keep
+                regex: prometheus-node-exporter
+              - source_labels: [__meta_kubernetes_pod_node_name]
+                target_label: node
+              - source_labels: [__address__]
+                target_label: instance
         ruleNamespaceSelector: {}
         ruleSelectorNilUsesHelmValues: false
         serviceMonitorSelectorNilUsesHelmValues: false
@@ -47,15 +60,6 @@ spec:
         serviceMonitorRelabelings:
           - sourceLabels: [__meta_kubernetes_node_name]
             targetLabel: node
-
-    prometheus-node-exporter:
-      prometheus:
-        monitor:
-          enabled: true
-          podMonitorSelectorNilUsesHelmValues: false
-          relabelings:
-            - sourceLabels: [__meta_kubernetes_node_name]
-              targetLabel: node
 
     kubeScheduler:
       enabled: false
