@@ -9,4 +9,4 @@ spec:
         name: selfsigned-cluster-issuer
         kind: ClusterIssuer
     ipAddresses:
-        - 192.168.34.202
+        - 192.168.34.201
