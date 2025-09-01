@@ -11,9 +11,6 @@ spec:
     - kind: Kustomization
       name: '*'
       namespace: flux-system
-    - kind: Kustomization
-      name: metallb
-      namespace: metallb-system
     - kind: HelmRelease
       name: '*'
       namespace: monitoring
