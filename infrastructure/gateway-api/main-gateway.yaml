@@ -18,7 +18,9 @@ spec:
     tls:
       mode: Terminate
       certificateRefs:
-        - name: grafana-cert
+        - name: grafana-tls
+          kind: Secret
+        - name: karma-tls
           kind: Secret
     allowedRoutes:
       namespaces:
