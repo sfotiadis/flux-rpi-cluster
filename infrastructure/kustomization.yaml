@@ -8,3 +8,4 @@ resources:
   - karma
   - notifications/github
   - loki-stack
+  # - gateway-api
