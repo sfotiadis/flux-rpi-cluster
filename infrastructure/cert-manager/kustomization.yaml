@@ -3,6 +3,8 @@ kind: Kustomization
 namespace: cert-manager
 resources:
   - helmrelease.yaml
+  - clusterissuer.yaml
+
 configMapGenerator:
   - name: cert-manager-values
     files:
