@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - helmrelease.yaml
   - prometheusrules
+  - certificates/grafana-cert.yaml
   - secrets/grafana-admin-secret.enc.yaml
   - servicemonitors
 
