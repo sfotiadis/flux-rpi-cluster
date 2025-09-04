@@ -17,6 +17,10 @@ spec:
       - name: pihole
         image: pihole/pihole:latest
         env:
+        - name: DNS1
+          value: "1.1.1.1"
+        - name: DNS2
+          value: "8.8.8.8"
         - name: TZ
           value: "Europe/Berlin"
         - name: WEBPASSWORD
