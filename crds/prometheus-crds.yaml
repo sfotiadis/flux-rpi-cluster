@@ -9,7 +9,7 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: flux-monitoring
+    name: flux-system
     namespace: flux-system
   dependsOn: []
   healthChecks:
