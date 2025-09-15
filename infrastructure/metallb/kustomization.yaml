@@ -4,6 +4,7 @@ namespace: metallb-system
 
 resources:
   - namespace.yaml
+  - crds.yaml
   - metallb.yaml
   - metallb-pool.enc.yaml
   - l2-advertisement.yaml
