@@ -8,7 +8,7 @@ spec:
   path: "./charts/kube-prometheus-stack/charts/crds/crds"
   prune: true
   sourceRef:
-    kind: GitRepository
+    kind: HelmRepository
     name: prometheus-community
     namespace: flux-system
   dependsOn: []
