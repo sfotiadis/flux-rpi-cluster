@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - kube-prometheus-stack
   - karma
-  # - notifications/github
-  # - loki-stack
+  - notifications/github
+  - loki-stack
