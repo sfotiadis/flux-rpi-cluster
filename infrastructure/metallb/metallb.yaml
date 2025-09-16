@@ -4,8 +4,6 @@ metadata:
   name: metallb
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: metallb-crds
   interval: 30m
   path: "./config/native"
   prune: true

@@ -18,6 +18,9 @@ spec:
     name: flux-kube-state-metrics-config
     valuesKey: kube-state-metrics-config.yaml
   values:
+    crds:
+      enabled: true
+
     grafana:
       enabled: true
       admin:
