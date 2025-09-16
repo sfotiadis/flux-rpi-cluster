@@ -6,4 +6,4 @@ resources:
   - namespace.yaml
   - helmrelease.yaml
   #- metallb-pool.enc.yaml
-  - l2-advertisement.yaml
+  #- l2-advertisement.yaml
