@@ -5,7 +5,7 @@ resources:
   - helmrelease.yaml
   # - prometheusrules
   - secrets/grafana-admin-secret.enc.yaml
-  - servicemonitors
+  #- servicemonitors
 
 configMapGenerator:
   - name: k3s-monitoring-dashboard
