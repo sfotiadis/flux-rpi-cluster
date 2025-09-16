@@ -27,7 +27,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/config
+  path: ./infrastructure/configs
   prune: true
   decryption:
     provider: sops
