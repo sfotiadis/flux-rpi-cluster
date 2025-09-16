@@ -4,8 +4,8 @@ resources:
   - metallb
   - cert-manager
   - kube-system-patch.yaml
-  - kube-prometheus-stack
+  # - kube-prometheus-stack
   - karma
-  - notifications/github
-  - loki-stack
+  # - notifications/github
+  # - loki-stack
   # - gateway-api
