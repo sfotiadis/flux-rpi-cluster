@@ -20,6 +20,7 @@ configMapGenerator:
     files:
       - control-plane.json=dashboards/control-plane.json
       - cluster.json=dashboards/cluster.json
+      - logs.json=dashboards/flux-logs.json
     options:
       labels:
         grafana_dashboard: "1"
