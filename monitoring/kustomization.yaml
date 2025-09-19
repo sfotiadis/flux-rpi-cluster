@@ -5,3 +5,4 @@ resources:
   - karma
   - notifications/github
   - loki-stack
+  - ./certificates/cert.yaml
