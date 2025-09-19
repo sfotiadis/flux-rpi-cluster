@@ -28,6 +28,15 @@ spec:
         userKey: admin-user
         passwordKey: admin-password
       defaultDashboardsEnabled: true
+      ingress:
+        enabled: true
+          ingressClassName: nginx
+        hosts:
+          - grafana.crulabs.internal
+        tls:
+          - secretName: ca-crulabs
+            hosts:
+              - grafana.crulabs.internal
       service:
           type: LoadBalancer
       sidecar:
