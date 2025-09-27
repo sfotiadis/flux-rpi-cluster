@@ -47,5 +47,3 @@ spec:
               pathType: Prefix
       tls:
         - secretName: ca-crulabs
-          hosts:
-            - minio.crulabs.internal
