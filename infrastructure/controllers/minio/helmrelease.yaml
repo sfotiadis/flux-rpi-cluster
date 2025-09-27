@@ -57,3 +57,7 @@ spec:
         - secretName: ca-crulabs
           hosts:
             - minio-console.crulabs.internal
+    metrics:
+      serviceMonitor:
+        enabled: false
+        includeNode: false
