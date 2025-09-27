@@ -9,6 +9,7 @@
 [![Postgres](https://img.shields.io/badge/Database-CloudNativePG-336791?logo=postgresql&logoColor=white)](https://cloudnative-pg.io/)
 [![NGINX](https://img.shields.io/badge/Ingress-NGINX-009639?logo=nginx&logoColor=white)](https://kubernetes.github.io/ingress-nginx/)
 [![Loki](https://img.shields.io/badge/Logging-Loki-5A2D81?logo=grafana&logoColor=white)](https://grafana.com/oss/loki/)
+[![MinIO](https://img.shields.io/badge/Storage-MinIO-9400d3?logo=minio&logoColor=white)](https://min.io/)
 
 This repository contains the GitOps configuration for my personal Raspberry Pi Kubernetes cluster (k3s).
 [Flux](https://fluxcd.io/) continuously reconciles the cluster state with the manifests stored here, ensuring a reproducible, self-healing setup.
@@ -33,6 +34,7 @@ The Cluster itself is provisioned by using [sfotiadis/ansible-rpi-cluster](https
     │   ├── cloudnative-pg            # CloudNativePG operator for PostgreSQL
     │   ├── ingress-nginx             # NGINX ingress controller
     │   ├── metallb                   # MetalLB controller
+    │   ├── minio                     # MinIO operator & distributed S3 storage
     │   └── provisioner               # Local Path Provisioner
     └── observability
         ├── certificates              # Certs for monitoring stack
