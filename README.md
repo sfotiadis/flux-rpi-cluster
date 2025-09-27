@@ -23,29 +23,24 @@ The Cluster itself is provisioned by using [sfotiadis/ansible-rpi-cluster](https
 .
 ├── clusters
 │   └── rpi-cluster
-│       └── flux-system        # Flux bootstrap & cluster entrypoint
+│       └── flux-system               # Flux bootstrap & cluster entrypoint
 └── infrastructure
     ├── configs
-    │   ├── cert-manager       # Issuers, secrets, and cert-manager configs
-    │   ├── metallb            # Address pools, L2Advertisements
-    │   └── storage            # Local-path StorageClass
+    │   ├── cert-manager              # Issuers, secrets, and cert-manager configs
+    │   ├── metallb                   # Address pools, L2Advertisements
+    │   └── storage                   # Local-path StorageClass
     ├── controllers
-    │   ├── cert-manager       # cert-manager operator
-    │   ├── cloudnative-pg     # CloudNativePG operator for PostgreSQL
-    │   ├── ingress-nginx      # NGINX ingress controller
-    │   ├── metallb            # MetalLB controller
-    │   └── provisioner        # Local Path Provisioner
+    │   ├── cert-manager              # cert-manager operator
+    │   ├── cloudnative-pg            # CloudNativePG operator for PostgreSQL
+    │   ├── ingress-nginx             # NGINX ingress controller
+    │   ├── metallb                   # MetalLB controller
+    │   └── provisioner               # Local Path Provisioner
     └── observability
-        ├── certificates       # Certs for monitoring stack
-        ├── karma              # Alert dashboard UI
-        ├── kube-prometheus-stack
-        │   ├── dashboards         # Grafana dashboards
-        │   ├── prometheusrules    # Custom Prometheus alerting rules
-        │   ├── secrets            # Encrypted user secrets
-        │   └── servicemonitors    # ServiceMonitor definitions
-        ├── loki-stack         # Loki & Promtail for logs
-        └── notifications
-            └── github         # Flux notifications via GitHub
+        ├── certificates              # Certs for monitoring stack
+        ├── karma                     # Alert dashboard UI
+        ├── kube-prometheus-stack     # Monitoring & alerting
+        ├── loki-stack                # Loki & Promtail for logs
+        └── notifications             # Flux notifications via GitHub
 ```
 
 ## Secrets Management
