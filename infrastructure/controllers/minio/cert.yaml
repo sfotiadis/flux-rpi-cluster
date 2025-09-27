@@ -2,7 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: crulabs-cert
-  namespace: monitoring
+  namespace: minio
 spec:
   secretName: ca-crulabs
   duration: 2160h   # 90 days
@@ -12,3 +12,4 @@ spec:
     kind: ClusterIssuer
   dnsNames:
   - minio.crulabs.internal
+  - minio-console.crulabs.internal

@@ -43,7 +43,17 @@ spec:
       path: /
       hosts:
         - minio.crulabs.internal
-#      tls:
-#        - secretName: ca-crulabs
-#          hosts:
-#            - minio.crulabs.internal
+      tls:
+        - secretName: ca-crulabs
+          hosts:
+            - minio.crulabs.internal
+    consoleIngress:
+      enabled: true
+      ingressClassName: nginx
+      path: /
+      hosts:
+        - minio-console.crulabs.internal
+      tls:
+        - secretName: ca-crulabs
+          hosts:
+            - minio-console.crulabs.internal
