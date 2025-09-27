@@ -61,5 +61,3 @@ spec:
       serviceMonitor:
         enabled: true
         includeNode: true
-        additionalLabels:
-          release: kube-prometheus-stack
