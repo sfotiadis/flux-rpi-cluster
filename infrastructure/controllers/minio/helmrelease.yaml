@@ -40,8 +40,10 @@ spec:
     ingress:
       enabled: true
       ingressClassName: nginx
+      path: /
       hosts:
-        - host: minio.crulabs.internal
-          paths:
-            - path: /
-              pathType: Prefix
+        - minio.crulabs.internal
+      tls:
+        - secretName: ca-crulabs
+          hosts:
+            - minio.crulabs.internal

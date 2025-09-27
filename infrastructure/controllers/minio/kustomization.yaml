@@ -5,3 +5,4 @@ resources:
   - helmrelease.yaml
   - pv.yaml
   - secrets/minio-auth.enc.yaml
+  - cert.yaml
