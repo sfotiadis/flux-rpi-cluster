@@ -15,7 +15,6 @@ This repository contains the GitOps configuration for my personal Raspberry Pi K
 
 The Cluster itself is provisioned by using [sfotiadis/ansible-rpi-cluster](https://github.com/sfotiadis/ansible-rpi-cluster), which installs k3s and [Cilium](https://cilium.io/).
 
----
 
 ## Repository Structure
 
