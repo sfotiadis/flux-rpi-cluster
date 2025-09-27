@@ -1,4 +1,12 @@
-# ./infrastructure/ingress/ingress-nginx.yaml
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: ingress-nginx
+  namespace: ingress-nginx
+spec:
+  interval: 12h
+  url: https://kubernetes.github.io/ingress-nginx
+---
 apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
@@ -13,7 +21,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: ingress-nginx
-        namespace: flux-system
+        namespace: ingress-nginx
   values:
     controller:
       replicaCount: 2

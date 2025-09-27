@@ -4,4 +4,4 @@ resources:
   - metallb
   - cert-manager
   - provisioner
-  - nginx
+  - ingress-nginx
