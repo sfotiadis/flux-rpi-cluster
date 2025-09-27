@@ -1,0 +1,39 @@
+version: 2
+updates:
+  # --- Controllers ---
+  - package-ecosystem: "helm"
+    directory: "/infrastructure/controllers/cert-manager"
+    schedule:
+      interval: "weekly"
+    labels: ["dependencies", "helm"]
+
+  - package-ecosystem: "helm"
+    directory: "/infrastructure/controllers/ingress-nginx"
+    schedule:
+      interval: "weekly"
+    labels: ["dependencies", "helm"]
+
+  - package-ecosystem: "helm"
+    directory: "/infrastructure/controllers/metallb"
+    schedule:
+      interval: "weekly"
+    labels: ["dependencies", "helm"]
+
+  - package-ecosystem: "helm"
+    directory: "/infrastructure/controllers/cloudnative-pg"
+    schedule:
+      interval: "weekly"
+    labels: ["dependencies", "helm"]
+
+  # --- Observability ---
+  - package-ecosystem: "helm"
+    directory: "/infrastructure/observability/kube-prometheus-stack"
+    schedule:
+      interval: "weekly"
+    labels: ["dependencies", "helm"]
+
+  - package-ecosystem: "helm"
+    directory: "/infrastructure/observability/loki-stack"
+    schedule:
+      interval: "weekly"
+    labels: ["dependencies", "helm"]
