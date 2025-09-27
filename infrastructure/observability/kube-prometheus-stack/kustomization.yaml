@@ -4,6 +4,7 @@ resources:
   - namespace.yaml
   - helmrelease.yaml
   - secrets/grafana-admin-secret.enc.yaml
+  - servicemonitors/minio.yaml
 
 configMapGenerator:
   - name: k3s-monitoring-dashboard
