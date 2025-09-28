@@ -61,3 +61,6 @@ spec:
       serviceMonitor:
         enabled: true
         includeNode: true
+        selector:
+          matchLabels:
+            app: minio
