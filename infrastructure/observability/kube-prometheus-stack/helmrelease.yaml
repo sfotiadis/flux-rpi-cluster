@@ -79,8 +79,15 @@ spec:
         ruleSelectorNilUsesHelmValues: false
         serviceMonitorSelectorNilUsesHelmValues: false
         serviceMonitorSelector:
-          matchLabels:
-            release: kube-prometheus-stack
+          matchExpressions:
+            - key: release
+              operator: In
+              values:
+                - kube-prometheus-stack
+            - key: prometheus
+              operator: In
+              values:
+                - kube-prometheus-stack
         serviceMonitorNamespaceSelector: {}
         serviceMonitorRelabelings:
           - sourceLabels: [__meta_kubernetes_node_name]

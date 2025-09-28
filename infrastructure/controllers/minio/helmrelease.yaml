@@ -62,7 +62,4 @@ spec:
         enabled: true
         includeNode: true
         additionalLabels:
-          release: kube-prometheus-stack
-        selector:
-          matchLabels:
-            app: minio
+          prometheus: kube-prometheus-stack
