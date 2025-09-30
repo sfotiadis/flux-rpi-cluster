@@ -30,11 +30,11 @@ spec:
                   name: hedgehoc-cnpg
                   key: password
             - name: POSTGRES_DB
-              value: hedgedoc
+              value: "hedgedoc"
             - name: POSTGRES_HOST
-              value: hedgedoc-db-rw.hedgedoc.svc.cluster.local
+              value: "hedgedoc-db-rw.hedgedoc.svc.cluster.local"
             - name: POSTGRES_PORT
-              value: 5432
+              value: "5432"
           volumeMounts:
             - name: uploads
               mountPath: /hedgedoc/public/uploads
