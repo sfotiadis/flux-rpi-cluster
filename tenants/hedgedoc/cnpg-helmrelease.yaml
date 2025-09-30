@@ -7,52 +7,24 @@ spec:
   interval: 10m
   chart:
     spec:
-      chart: cluster
-      version: 0.3.1
+      chart: ./tenants/charts/cloudnative-pg
       sourceRef:
-        kind: HelmRepository
-        name: cnpg
-        namespace: cnpg-system
+        kind: GitRepository
+        name: local-charts
+        namespace: flux-system
   values:
-    cluster:
-      instances: 2
-      storage:
-        size: 5Gi
-        storageClass: local-path
-      affinity:
-        topologyKey: kubernetes.io/hostname
-      monitoring:
-        enabled: true
-      initdb:
-        database: hedgedoc
-        owner: admin
-        secret:
-          name: hedgedoc-cnpg
-
-    backups:
-      enabled: true
-      provider: s3
-      destinationPath: "s3://hedgedoc/"
-      endpointURL: "http://minio.minio.svc.cluster.local:9000"
-      s3:
-        bucket: hedgedoc
-        path: "/"
-        accessKey: ACCESS_KEY_ID
-        secretKey: ACCESS_SECRET_KEY
+    initdb:
+      database: "hedgedoc"
+      owner: "admin"
       secret:
-        create: false
-        name: hedgedoc-minio-creds
-      wal:
-        compression: gzip
-        encryption: AES256
-        maxParallel: 1
-      data:
-        compression: gzip
-        encryption: AES256
-        jobs: 2
-      scheduledBackups:
-        - name: daily-backup
-          schedule: "0 2 * * *"
-          backupOwnerReference: self
-          method: barmanObjectStore
+        name: "hedgedoc-cnpg"
+    backup:
+      enabled: true
+      destinationPath: "s3://hedgedoc/db/"
+      endpointURL: "http://minio.minio.svc.cluster.local:9000"
+      secret:
+        name: "hedgedoc-minio-creds"
       retentionPolicy: "30d"
+    storageClass: "local-path"
+    storage:
+      size: 5Gi
