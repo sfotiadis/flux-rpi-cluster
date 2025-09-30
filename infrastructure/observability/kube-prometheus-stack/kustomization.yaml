@@ -12,10 +12,17 @@ configMapGenerator:
     options:
       labels:
         grafana_dashboard: "1"
-  - name: k3s-monitoring-dashboard
+  - name: minio-dashboard
     namespace: monitoring
     files:
       - minio.json=dashboards/minio.json
+    options:
+      labels:
+        grafana_dashboard: "1"
+  - name: cnpg-dashboard
+    namespace: monitoring
+    files:
+      - cnpg.json=dashboards/cnpg.json
     options:
       labels:
         grafana_dashboard: "1"
