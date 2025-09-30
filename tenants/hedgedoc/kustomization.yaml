@@ -7,3 +7,4 @@ resources:
   - cnpg-helmrelease.yaml
   - deployment.yaml
   - pvc.yaml
+  - service.yaml
