@@ -78,16 +78,16 @@ spec:
         ruleNamespaceSelector: {}
         ruleSelectorNilUsesHelmValues: false
         serviceMonitorSelectorNilUsesHelmValues: false
-        serviceMonitorSelector:
-          matchExpressions:
-            - key: release
-              operator: In
-              values:
-                - kube-prometheus-stack
-            - key: prometheus
-              operator: In
-              values:
-                - kube-prometheus-stack
+        #serviceMonitorSelector:
+        #  matchExpressions:
+        #    - key: release
+        #      operator: In
+        #      values:
+        #        - kube-prometheus-stack
+        #    - key: prometheus
+        #      operator: In
+        #      values:
+        #        - kube-prometheus-stack
         serviceMonitorNamespaceSelector: {}
         serviceMonitorRelabelings:
           - sourceLabels: [__meta_kubernetes_node_name]
