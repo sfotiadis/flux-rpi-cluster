@@ -32,11 +32,11 @@ spec:
     backups:
       enabled: true
       provider: s3
-      destinationPath: "s3://hedgedoc/db/"
+      destinationPath: "s3://hedgedoc/"
       endpointURL: "http://minio.minio.svc.cluster.local:9000"
       s3:
         bucket: hedgedoc
-        path: "/db/"
+        path: "/"
         accessKey: ACCESS_KEY_ID
         secretKey: ACCESS_SECRET_KEY
       secret:
