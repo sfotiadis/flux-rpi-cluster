@@ -9,7 +9,7 @@ initdb:
 
 enableSuperuserAccess: false
 superuserSecret:
-  name: ""
+  name: "superuser-secret"
 
 storageClass: standard
 storage:
