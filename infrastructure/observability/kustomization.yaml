@@ -3,6 +3,6 @@ kind: Kustomization
 resources:
   - kube-prometheus-stack
   - karma
-  - notifications/github
+  - flux-monitoring
   - loki-stack
   - ./certificates/cert.yaml
