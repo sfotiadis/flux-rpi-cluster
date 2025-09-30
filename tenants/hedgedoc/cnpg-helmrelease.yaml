@@ -1,0 +1,26 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: hedgedoc-db
+  namespace: hedgedoc
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: cluster
+      version: 0.1.2
+      sourceRef:
+        kind: HelmRepository
+        name: cnpg
+        namespace: cnpg-system
+  values:
+    instances: 1
+    storage:
+      size: 5Gi
+      storageClass: local-path
+    #bootstrap:
+    #  initdb:
+    #    database: hedgedoc
+    #    owner: hedgedoc
+    #    secret:
+    #      name: hedgedoc-db-secret
