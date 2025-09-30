@@ -6,4 +6,5 @@ metadata:
 spec:
   interval: 1m
   url: https://github.com/sfotiadis/flux-rpi-cluster
-  branch: main
+  ref:
+    branch: main
