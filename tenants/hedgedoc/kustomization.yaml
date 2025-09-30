@@ -5,3 +5,5 @@ resources:
   - namespace.yaml
   - secrets
   - cnpg-helmrelease.yaml
+  - deployment.yaml
+  - pvc.yaml
