@@ -21,3 +21,8 @@ spec:
         storageClass: local-path
       monitoring:
         enabled: true
+      initdb:
+        database: hedgedoc
+        owner: admin
+        secret:
+          name: hedgedoc-cnpg

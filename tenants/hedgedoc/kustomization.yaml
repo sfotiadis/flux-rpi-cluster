@@ -3,6 +3,6 @@ kind: Kustomization
 namespace: hedgedoc
 resources:
   - namespace.yaml
-  # - secrets
+  - secrets/hedgedoc-cnpg.enc.yaml
   # - deployment.yaml
   - cnpg-helmrelease.yaml
