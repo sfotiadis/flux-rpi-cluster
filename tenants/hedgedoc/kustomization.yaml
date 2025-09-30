@@ -4,5 +4,6 @@ namespace: hedgedoc
 resources:
   - namespace.yaml
   - secrets
+  - rbac.yaml
   # - deployment.yaml
   - cnpg-helmrelease.yaml
