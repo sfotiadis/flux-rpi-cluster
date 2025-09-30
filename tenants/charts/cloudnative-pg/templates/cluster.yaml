@@ -40,7 +40,6 @@ spec:
       data:
         compression: gzip
         encryption: AES256
-        immediateCheckpoint: true
         jobs: 2
     retentionPolicy: {{ .Values.backup.retentionPolicy }}
 {{- end }}

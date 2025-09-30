@@ -20,7 +20,7 @@ backup:
   destinationPath: s3://
   endpointURL: http://minio.minio.svc.cluster.local:9000
   secret:
-    name: ""
+    name: "backup-credentials"
   schedule: "0 2 * * *" # daily at 2 AM
   retentionPolicy: "30d"
 
