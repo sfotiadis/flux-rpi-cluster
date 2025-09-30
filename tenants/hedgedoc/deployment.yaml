@@ -39,6 +39,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: hedgedoc-app-config
+                  key: CMD_DB_URL
           volumeMounts:
             - name: uploads
               mountPath: /hedgedoc/public/uploads
