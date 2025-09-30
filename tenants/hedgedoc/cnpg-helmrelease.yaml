@@ -28,17 +28,31 @@ spec:
         owner: admin
         secret:
           name: hedgedoc-cnpg
-      backup:
-        barmanObjectStore:
-          destinationPath: "s3://hedgedoc/db/"
-          endpointURL: "http://minio.minio.svc.cluster.local:9000"
-          s3Credentials:
-            accessKeyId:
-              name: hedgedoc-minio-creds
-              key: ACCESS_KEY_ID
-            secretAccessKey:
-              name: hedgedoc-minio-creds
-              key: ACCESS_SECRET_KEY
-          wal:
-            compression: gzip
-        retentionPolicy: "30d"
+
+    backups:
+      enabled: true
+      provider: s3
+      destinationPath: "s3://hedgedoc/db/"
+      endpointURL: "http://minio.minio.svc.cluster.local:9000"
+      s3:
+        bucket: hedgedoc
+        path: "/db/"
+        accessKey: ACCESS_KEY_ID
+        secretKey: ACCESS_SECRET_KEY
+      secret:
+        create: false
+        name: hedgedoc-minio-creds
+      wal:
+        compression: gzip
+        encryption: AES256
+        maxParallel: 1
+      data:
+        compression: gzip
+        encryption: AES256
+        jobs: 2
+      scheduledBackups:
+        - name: daily-backup
+          schedule: "0 2 * * *"
+          backupOwnerReference: self
+          method: barmanObjectStore
+      retentionPolicy: "30d"
