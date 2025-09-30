@@ -29,6 +29,12 @@ spec:
                 secretKeyRef:
                   name: hedgedoc-cnpg
                   key: password
+            - name: CMD_DOMAIN
+              value:  "notes.crulabs.internal"
+            - name: CMD_URL_ADDPORT
+              value: "true"
+            - name: CMD_PROTOCOL_USESSL
+              value: "false"
             - name: POSTGRES_DB
               value: "hedgedoc"
             - name: POSTGRES_HOST
