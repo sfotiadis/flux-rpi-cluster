@@ -21,7 +21,7 @@ backup:
   endpointURL: http://minio.minio.svc.cluster.local:9000
   secret:
     name: "backup-credentials"
-  schedule: "0 2 * * *" # daily at 2 AM
+  schedule: "0 0 0 * * *" # daily at midnight
   retentionPolicy: "30d"
 
 affinity:
