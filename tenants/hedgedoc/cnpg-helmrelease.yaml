@@ -19,9 +19,5 @@ spec:
       storage:
         size: 5Gi
         storageClass: local-path
-    #bootstrap:
-    #  initdb:
-    #    database: hedgedoc
-    #    owner: hedgedoc
-    #    secret:
-    #      name: hedgedoc-db-secret
+      monitoring:
+        enabled: true
