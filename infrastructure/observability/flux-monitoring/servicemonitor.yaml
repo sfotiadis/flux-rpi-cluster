@@ -11,6 +11,6 @@ spec:
       - flux-system
   selector: {}
   endpoints:
-    - port: http
+    - port: http-prom
       path: /metrics
       interval: 30s
