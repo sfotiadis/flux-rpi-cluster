@@ -71,8 +71,9 @@ spec:
                 target_label: node
               - source_labels: [__address__]
                 target_label: instance
+        podMonitorSelector: {}
         podMonitorNamespaceSelector: {}
-        podMonitorSelectorNilUsesHelmValues: true
+        podMonitorSelectorNilUsesHelmValues: false
         ruleNamespaceSelector: {}
         ruleSelectorNilUsesHelmValues: false
         serviceMonitorSelectorNilUsesHelmValues: false
