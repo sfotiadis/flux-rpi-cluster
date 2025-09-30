@@ -36,10 +36,8 @@ spec:
           key: ACCESS_SECRET_KEY
       wal:
         compression: gzip
-        encryption: AES256
       data:
         compression: gzip
-        encryption: AES256
         jobs: 2
     retentionPolicy: {{ .Values.backup.retentionPolicy }}
 {{- end }}
