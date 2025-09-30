@@ -6,7 +6,7 @@ metadata:
   name: {{ .Release.Name }}
   namespace: {{ .Release.Namespace }}
 spec:
-  immediate: false
+  immediate: true
   schedule: {{ .Values.backup.schedule }}
   cluster:
     name: {{ .Release.Name }}

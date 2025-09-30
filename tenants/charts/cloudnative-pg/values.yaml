@@ -11,7 +11,7 @@ enableSuperuserAccess: false
 superuserSecret:
   name: "superuser-secret"
 
-storageClass: standard
+storageClass: local-path
 storage:
   size: 5gi
 
