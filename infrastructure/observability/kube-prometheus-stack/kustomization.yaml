@@ -1,20 +1,26 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - namespace.yaml
   - helmrelease.yaml
   - secrets/grafana-admin-secret.enc.yaml
 
 configMapGenerator:
   - name: k3s-monitoring-dashboard
-    namespace: grafana
+    namespace: monitoring
     files:
       - my-dashboard.json=dashboards/k3s-monitoring.json
     options:
       labels:
         grafana_dashboard: "1"
+  - name: k3s-monitoring-dashboard
+    namespace: monitoring
+    files:
+      - minio.json=dashboards/minio.json
+    options:
+      labels:
+        grafana_dashboard: "1"
   - name: flux-dashboards
-    namespace: grafana
+    namespace: monitoring
     files:
       - control-plane.json=dashboards/control-plane.json
       - cluster.json=dashboards/cluster.json
