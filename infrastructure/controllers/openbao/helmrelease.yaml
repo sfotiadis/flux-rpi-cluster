@@ -17,7 +17,7 @@ spec:
   chart:
     spec:
       chart: openbao/openbao
-      version: 0.18..2
+      version: 0.18.2
       sourceRef:
         kind: HelmRepository
         name: openbao
