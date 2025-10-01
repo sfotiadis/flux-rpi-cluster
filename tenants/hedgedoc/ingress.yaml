@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hedgedoc
+  namespace: hedgedoc
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - notes.crulabs.internal
+      secretName: ca-crulabs
+  rules:
+    - host: notes.crulabs.internal
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: hedgedoc
+                port:
+                  number: 3000
