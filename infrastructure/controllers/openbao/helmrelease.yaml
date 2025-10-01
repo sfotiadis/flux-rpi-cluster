@@ -16,7 +16,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: openbao/openbao
+      chart: openbao
       version: 0.18.2
       sourceRef:
         kind: HelmRepository
@@ -33,10 +33,10 @@ spec:
           - secretName: ca-crulabs
             hosts:
               - openbao.crulabs.internal
-     serverTelemetry:
-       serviceMonitor:
-         enabled: true
-       prometheusRules:
-         enabled: true
-       grafanaDashboard:
-         enabled: true
+    serverTelemetry:
+      serviceMonitor:
+        enabled: true
+      prometheusRules:
+        enabled: true
+      grafanaDashboard:
+        enabled: true
