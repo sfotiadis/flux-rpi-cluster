@@ -42,7 +42,7 @@ spec:
     database:
       vendor: postgres
       database: keycloak
-      post: 5432
+      port: 5432
       username: admin
       existingSecret: keycloak-cnpg
       hostname: keycloak-db-rw.keycloak.svc.cluster.local
