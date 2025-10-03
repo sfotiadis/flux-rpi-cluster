@@ -26,8 +26,8 @@ spec:
   values:
     replicas: 1
     image:
-      repository: quay.io/keycloak/keycloak
-      tag: "18.0.0"
+      repository: sleighzy/keycloak
+      tag: "16.1.0-arm64"
     resources:
       requests:
         memory: "512Mi"
