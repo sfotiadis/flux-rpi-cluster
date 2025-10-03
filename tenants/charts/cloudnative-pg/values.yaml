@@ -13,7 +13,7 @@ superuserSecret:
 
 storageClass: local-path
 storage:
-  size: 5gi
+  size: 5Gi
 
 backup:
   enabled: true
