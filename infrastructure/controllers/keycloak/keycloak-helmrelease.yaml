@@ -25,11 +25,9 @@ spec:
         namespace: keycloak
   values:
     replicas: 1
-    image:
-      tag: latest
     ingress:
       enabled: true
-      className: nginx
+      ingressClassName: nginx
       rules:
         - host: keycloak.crulabs.internal
           paths:
@@ -39,9 +37,23 @@ spec:
         - secretName: ca-crulabs
           hosts:
             - keycloak.crulabs.internal
-    persistence:
+    dbchecker:
+      enabled: true
+    database:
       vendor: postgres
       database: keycloak
-      user: keycloak
-      password: changeme
-      host: keycloak-db
+      post: 5432
+      username: admin
+      existingSecret: keycloak-cnpg
+      hostname: keycloak-db-rw.keycloak.svc.cluster.local
+    extraEnv: |
+      - name: KEYCLOAK_ADMIN
+        valueFrom:
+          secretKeyRef:
+            name: keycloak-admin-secret
+            key: username
+      - name: KEYCLOAK_ADMIN_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: keycloak-admin-secret
+            key: password
