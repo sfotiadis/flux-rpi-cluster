@@ -8,3 +8,4 @@ resources:
   - cloudnative-pg
   - minio
   - openbao
+  - keycloak

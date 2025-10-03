@@ -40,8 +40,8 @@ spec:
           hosts:
             - keycloak.crulabs.internal
     persistence:
-      dbVendor: postgres
-      dbName: keycloak
-      dbUser: keycloak
-      dbPassword: changeme  # ideally injected via OpenBao or SOPS
-      dbHost: keycloak-db
+      vendor: postgres
+      database: keycloak
+      user: keycloak
+      password: changeme
+      host: keycloak-db

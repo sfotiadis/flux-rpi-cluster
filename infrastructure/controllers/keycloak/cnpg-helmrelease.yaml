@@ -1,8 +1,8 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: hedgedoc-db
-  namespace: hedgedoc
+  name: keycloak-db
+  namespace: keycloak
 spec:
   interval: 10m
   chart:
@@ -14,17 +14,11 @@ spec:
         namespace: flux-system
   values:
     initdb:
-      database: "hedgedoc"
+      database: "keycloak"
       owner: "admin"
       secret:
-        name: "hedgedoc-cnpg"
+        name: "keycloak-cnpg"
     backup:
       enabled: true
-      destinationPath: "s3://hedgedoc/db/"
-      endpointURL: "http://minio.minio.svc.cluster.local:9000"
-      secret:
-        name: "hedgedoc-minio-creds"
-      retentionPolicy: "30d"
-    storageClass: "local-path"
-    storage:
-      size: 5Gi
+      destinationPath: "s3://keycloak/"
+
