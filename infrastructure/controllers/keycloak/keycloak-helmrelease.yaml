@@ -28,6 +28,13 @@ spec:
     image:
       repository: quay.io/keycloak/keycloak
       tag: "18.0.0"
+    resources:
+      requests:
+        memory: "512Mi"
+        cpu: "250m"
+      limits:
+        memory: "1Gi"
+        cpu: "500m"
     ingress:
       enabled: true
       ingressClassName: nginx
