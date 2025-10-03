@@ -25,6 +25,9 @@ spec:
         namespace: keycloak
   values:
     replicas: 1
+    image:
+      repository: quay.io/keycloak/keycloak
+      tag: "18.0.0"
     ingress:
       enabled: true
       ingressClassName: nginx
