@@ -117,7 +117,7 @@
             "uid": "prometheus"
           },
           "exemplar": true,
-          "expr": "sum (container_memory_working_set_bytes{node=~\"^$Node$\"}) / sum (machine_memory_bytes{node=~\"^$Node$\"}) * 100",
+          "expr": "100 * (sum(node_memory_MemTotal_bytes{node=~\"^$Node$\", node!=\"\"} - node_memory_MemAvailable_bytes{node=~\"^$Node$\", node!=\"\"})) / sum(node_memory_MemTotal_bytes{node=~\"^$Node$\", node!=\"\"})",
           "format": "time_series",
           "interval": "10s",
           "intervalFactor": 1,
