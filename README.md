@@ -35,13 +35,15 @@ The Cluster itself is provisioned by using [sfotiadis/ansible-rpi-cluster](https
     │   ├── ingress-nginx             # NGINX ingress controller
     │   ├── metallb                   # MetalLB controller
     │   ├── minio                     # MinIO operator & distributed S3 storage
+    │   ├── openbao                   # OpenBao operator (experimental, not in use yet)
     │   └── provisioner               # Local Path Provisioner
-    └── observability
-        ├── certificates              # Certs for monitoring stack
-        ├── karma                     # Alert dashboard UI
-        ├── kube-prometheus-stack     # Monitoring & alerting
-        ├── loki-stack                # Loki & Promtail for logs
-        └── notifications             # Flux notifications via GitHub
+    ├── observability
+    │   ├── certificates              # Certs for monitoring stack
+    │   ├── karma                     # Alert dashboard UI
+    │   ├── kube-prometheus-stack     # Monitoring & alerting
+    │   ├── loki-stack                # Loki & Promtail for logs
+    │   └── notifications             # Flux notifications via GitHub
+    └── tenants 
 ```
 
 ## Secrets Management
