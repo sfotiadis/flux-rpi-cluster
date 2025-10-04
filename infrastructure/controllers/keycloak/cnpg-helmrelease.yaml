@@ -14,11 +14,8 @@ spec:
         namespace: flux-system
   values:
     initdb:
-      database: "keycloak"
       owner: "admin"
       secret:
         name: "keycloak-cnpg"
     backup:
       enabled: true
-      destinationPath: "s3://keycloak/"
-
