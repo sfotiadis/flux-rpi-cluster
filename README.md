@@ -43,7 +43,7 @@ The Cluster itself is provisioned by using [sfotiadis/ansible-rpi-cluster](https
     │   ├── kube-prometheus-stack     # Monitoring & alerting
     │   ├── loki-stack                # Loki & Promtail for logs
     │   └── notifications             # Flux notifications via GitHub
-    └── tenants 
+    └── tenants
 ```
 
 ## Secrets Management
