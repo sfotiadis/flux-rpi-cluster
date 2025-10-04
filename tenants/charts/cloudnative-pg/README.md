@@ -50,6 +50,7 @@ spec:
   values:
     # configuration values go here
 ```
+
 ### Minimal Values Configuration
 
 ```yaml
