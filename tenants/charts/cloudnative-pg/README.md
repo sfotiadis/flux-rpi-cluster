@@ -10,6 +10,7 @@ Optimized for running on my raspberry pi cluster  with [FluxCD](https://fluxcd.i
 - [Features](#features)
 - [Installation](#installation)
 - [Secrets](#secrets)
+- [Backups](#backups)
 - [Parameters](#parameters)
 - [Roadmap](#roadmap)
 - [References](#references)
@@ -49,12 +50,36 @@ spec:
   values:
     # configuration values go here
 ```
+### Minimal Values Configuration
+
+```yaml
+  values:
+    storage:
+      size: 5Gi
+    backup:
+      enabled: false
+```
 
 ## Secrets
 
 When deploying the chart, the creation of Kubernetes secrets for the **database owner** and optionally for **backups** is needed.
 
 - The **owner secret** (for 'initdb.owner') is a standard Kubernetes secret containing the database user credentials (username/password). The name of this secret can be provided via `initdb.secret.name` in `values.yaml`.
+
+When using default values for initdb owner:
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: backup-credentials
+  namespace: <tenant-namespace>
+type: kubernetes.io/basic-auth
+stringData:
+  username: app
+  password: <app-user-password> # todo: add super safe password
+```
+
 - The **backup secret** is required if backups are enabled. The name of the secret can be configured in `backup.secret.name`. The keys inside the secret **must** be named `ACCESS_KEY_ID` and `ACCESS_SECRET_KEY`.
 
 Example backup credentials secret:
@@ -77,15 +102,15 @@ stringData:
 |---------------------------|--------------------------------------------------|---------|
 | `imageName`               | PostgreSQL container image                       | `ghcr.io/cloudnative-pg/postgresql:17.5` |
 | `instances`               | Number of cluster instances                      | `2` |
-| `initdb.database`         | Default database name                            | `app` |
+| `initdb.database`         | Default database name                            | `""` defaults to release name |
 | `initdb.owner`            | Database owner                                   | `app` |
-| `initdb.secret.name`      | Secret containing user credentials               | `cluster-example-app-user` |
+| `initdb.secret.name`      | Secret containing user credentials               | `cnpg-app-user` |
 | `enableSuperuserAccess`   | Enable/disable superuser access                  | `false` |
-| `superuserSecret.name`    | Secret with superuser credentials                | `example-superuser-secret` |
+| `superuserSecret.name`    | Secret with superuser credentials                | `cnpg-superuser` |
 | `storageClass`            | StorageClass for PVCs                            | `local-path` |
 | `storage.size`            | Volume size                                      | `5Gi` |
 | `backup.enabled`          | Enable backups                                   | `true` |
-| `backup.destinationPath`  | Backup destination (S3-compatible)               | `s3://` |
+| `backup.destinationPath`  | Backup destination (S3-compatible)               | `""` defaults to s3://release-name/ |
 | `backup.endpointURL`      | S3 endpoint URL                                  | `http://minio.minio.svc.cluster.local:9000` |
 | `backup.secret.name`      | Secret with backup credentials                   | `backup-credentials` |
 | `backup.schedule`         | Cron schedule for backups (daily at midnight)    | `0 0 0 * * *` |

@@ -9,7 +9,7 @@ spec:
 
   bootstrap:
     initdb:
-      database: {{ .Values.initdb.database }}
+      database: {{ .Values.initdb.database | default .Release.Name }}
       owner: {{ .Values.initdb.owner }}
       secret:
         name: {{ .Values.initdb.secret.name }}
@@ -25,7 +25,7 @@ spec:
 {{- if .Values.backup.enabled }}
   backup:
     barmanObjectStore:
-      destinationPath: {{ .Values.backup.destinationPath }}
+      destinationPath: {{ .Values.backup.destinationPath | default (printf "s3://%s/" .Release.Name) }}
       endpointURL: {{ .Values.backup.endpointURL }}
       s3Credentials:
         accessKeyId:
