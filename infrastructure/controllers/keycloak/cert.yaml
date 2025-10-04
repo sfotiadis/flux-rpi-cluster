@@ -12,3 +12,4 @@ spec:
     kind: ClusterIssuer
   dnsNames:
   - keycloak.crulabs.internal
+  - console.keycloak.crulabs.internal

@@ -47,6 +47,15 @@ spec:
         - secretName: ca-crulabs
           hosts:
             - keycloak.crulabs.internal
+      console:
+        enabled: true
+        ingressClassName: nginx
+        rules:
+          - host: console.keycloak.crulabs.internal
+        tls:
+          - secretName: ca-crulabs
+            hosts:
+              - console.keycloak.crulabs.internal
     dbchecker:
       enabled: true
     database:
