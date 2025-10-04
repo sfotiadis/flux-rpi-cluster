@@ -52,6 +52,9 @@ spec:
         ingressClassName: nginx
         rules:
           - host: console.keycloak.crulabs.internal
+            paths:
+              - path: /
+                pathType: Prefix
         tls:
           - secretName: ca-crulabs
             hosts:
