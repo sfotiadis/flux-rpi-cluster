@@ -1,0 +1,40 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: kratos
+  namespace: kratos
+spec:
+  interval: 12h
+  url: https://k8s.ory.sh/helm/charts
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: kratos
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: kratos
+      version: 0.58.0
+      sourceRef:
+        kind: HelmRepository
+        name: kratos
+        namespace: kratos
+  values:
+    ingress:
+      admin:
+        enabled: false
+        className: ""
+        annotations: {}
+        # kubernetes.io/ingress.class: nginx
+        # kubernetes.io/tls-acme: "true"
+        hosts:
+          - host: kratos.admin.local.com
+            paths:
+              - path: /
+                pathType: ImplementationSpecific
+        tls: []
+        #  - secretName: chart-example-tls
+        #    hosts:
+        #      - chart-example.
