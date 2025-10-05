@@ -24,5 +24,5 @@ spec:
         namespace: ingress-nginx
   values:
     controller:
-      replicaCount: 2
+      replicaCount: 1
       hostNetwork: true
