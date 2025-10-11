@@ -4,7 +4,7 @@ metadata:
   name: minio-pv
 spec:
   capacity:
-    storage: 3500Gi
+    storage: 90Gi
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
