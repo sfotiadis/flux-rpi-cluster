@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: nextcloud-db
+  namespace: nextcloud
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: ./tenants/charts/cloudnative-pg
+      sourceRef:
+        kind: GitRepository
+        name: local-charts
+        namespace: flux-system
+  values:
+  
