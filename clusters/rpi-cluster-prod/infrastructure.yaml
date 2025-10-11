@@ -8,7 +8,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/controllers
+  path: ./infrastructure/controllers/prod
   prune: true
   decryption:
     provider: sops
@@ -27,7 +27,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/configs
+  path: ./infrastructure/configs/prod
   prune: true
   decryption:
     provider: sops
@@ -46,7 +46,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/observability
+  path: ./infrastructure/observability/prod
   prune: true
   decryption:
     provider: sops

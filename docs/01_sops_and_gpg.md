@@ -1,5 +1,5 @@
 - create gpg key pair
-   ```bash 
+   ```bash
    gpg --full-generate-key
    ```
 - export public key to encrypt secrets
@@ -11,7 +11,7 @@
    gpg --armor --export-secret-keys <key-id> > gpgkey.priv
    kubectl -n flux-system create secret generic sops-gpg \
    --from-file=pgp.asc=gpgkey.priv
-   rm gpgkey.priv  
+   rm gpgkey.priv
    ```
 - create a '.sops.yaml' in your root directory with:
    ```bash

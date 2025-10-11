@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- gotk-components.yaml
+- gotk-sync.yaml
+patches:
+- patch: |
+    - op: add
+      path: /metadata/labels/cert-manager.io~1disable-validation
+      value: "true"
+  target:
+    kind: Namespace
+    name: kube-system
