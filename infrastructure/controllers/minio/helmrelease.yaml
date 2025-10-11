@@ -27,8 +27,8 @@ spec:
     replicas: 2
     persistence:
       enabled: true
-      size: 20Gi
-      storageClass: local-path
+      size: 90Gi
+      storageClass: minio-storage
     drivesPerNode: 1
     resources:
       requests:
