@@ -7,5 +7,5 @@ data:
   karma.yaml: |
     alertmanager:
       servers:
-        - name: default
+        - name: rpi-cluster-prod
           uri: http://kube-prometheus-stack-alertmanager.monitoring.svc:9093

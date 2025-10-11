@@ -3,5 +3,3 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - helmrelease.yaml
-  - secrets/minio-auth.enc.yaml
-  - cert.yaml

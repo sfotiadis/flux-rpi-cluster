@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: crulabs-cert
+  namespace: monitoring
+spec:
+  secretName: ca-crulabs
+  duration: 2160h   # 90 days
+  renewBefore: 360h
+  issuerRef:
+    name: ca-issuer
+    kind: ClusterIssuer
+  dnsNames:
+  - grafana.dev.crulabs.internal
+  - karma.dev.crulabs.internal

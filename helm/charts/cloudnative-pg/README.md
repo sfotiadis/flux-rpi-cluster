@@ -42,7 +42,7 @@ spec:
   interval: 10m
   chart:
     spec:
-      chart: ./tenants/charts/cloudnative-pg
+      chart: ./helm/charts/cloudnative-pg
       sourceRef:
         kind: GitRepository
         name: local-charts
