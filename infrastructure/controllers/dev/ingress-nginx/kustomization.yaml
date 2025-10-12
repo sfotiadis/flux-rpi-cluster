@@ -3,5 +3,7 @@ kind: Kustomization
 namespace: ingress-nginx
 
 resources:
-  - /../../base/ingress-nginx
-  - helmrelease.yaml
+  - ../../base/ingress-nginx
+
+patches:
+  - path: helmrelease.yaml

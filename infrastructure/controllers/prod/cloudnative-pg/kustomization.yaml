@@ -3,5 +3,7 @@ kind: Kustomization
 namespace: cnpg-system
 
 resources:
-  - /../../base/cloudnative-pg
-  - helmrelease.yaml
+  - ../../base/cloudnative-pg
+
+patches:
+  - path: helmrelease.yaml
