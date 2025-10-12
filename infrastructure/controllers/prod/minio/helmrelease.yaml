@@ -18,7 +18,7 @@ spec:
     replicas: 2
     persistence:
       enabled: true
-      size: 90Gi
+      size: 45Gi
       storageClass: minio-storage
     drivesPerNode: 1
     resources:
