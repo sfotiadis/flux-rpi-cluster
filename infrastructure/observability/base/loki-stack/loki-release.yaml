@@ -55,6 +55,10 @@ spec:
         retention_period: 24h
         volume_enabled: true
       # https://grafana.com/docs/loki/latest/setup/install/helm/install-monolithic/
+      persistence:
+        enabled: true
+        size: 10Gi
+        storageClass: local-path
       commonConfig:
         replication_factor: 1
       schemaConfig:
