@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - kube-prometheus-stack
   - certificates
-  - ../base/flux-monitoring
-  - ../base/loki-stack
+  #- ../base/flux-monitoring
+  #- ../base/loki-stack
