@@ -4,10 +4,11 @@ metadata:
     name: metallb-pool
     namespace: metallb-system
 spec:
-    addresses: ENC[AES256_GCM,data:ltXG0S7LVbimZk5r9C2MiDX73tCfx4go324WvBk=,iv:K5iN5fIVuwocP3fwq1HsbBGlP5ECnTYs8VH9ZMeVxSA=,tag:wvluS4blJQ5H4SGOL4CnCw==,type:str]
+    addresses:
+        - ENC[AES256_GCM,data:ltXG0S7LVbimZk5r9C2MiDX73tCfx4go324WvBk=,iv:K5iN5fIVuwocP3fwq1HsbBGlP5ECnTYs8VH9ZMeVxSA=,tag:wvluS4blJQ5H4SGOL4CnCw==,type:str]
 sops:
-    lastmodified: "2025-10-12T15:11:43Z"
-    mac: ENC[AES256_GCM,data:GxN1HKpyaQ7AabYy22aIKTLBsbPKtV8HiubpUaTNlvfjT0+VdMpSsbyONXTxUkgflZkaBhA/wnuIvyfmp9mCSE+88ODj4adjYxdZ6p6p/LfZ+1LQZdjBBSGdZqxhPGI/RYzf+PSdQ3fcQWs/7tTMT8beoW3nZCs1pqDKqRypx9U=,iv:B/SgjQYFZhbD2ZdLnip+ahd2SkawWl3+XqGKIdEHycc=,tag:zb7Iodkg++OxauPv6UoUjA==,type:str]
+    lastmodified: "2025-10-12T15:26:08Z"
+    mac: ENC[AES256_GCM,data:jblYfGRMcviPQO54P4kg5sC2A7/WptaIGGTzdQziPWC/e+cWP6TpbuG5xhZlCARm82fA+cAszNoJLbXJP59WqY0rGGdK9uPiogiJhQ+AtQQ4LrdPeGU6nOGF7iE+67yC6UXy6HE4CEQiKHmdKs/Ta/VCBSsvuqylHtwUeOzU0VU=,iv:LcXe9GWLhzvuOjz5ulPqCGVon8Ftz5LQQHhbJYXRYvc=,tag:8Bv8fqIXb1sQvhRRq7A84w==,type:str]
     pgp:
         - created_at: "2025-10-09T16:15:22Z"
           enc: |-
