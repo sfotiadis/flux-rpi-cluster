@@ -5,10 +5,10 @@ metadata:
     namespace: metallb-system
 spec:
     addresses:
-        - ENC[AES256_GCM,data:t3qfBX2/ahL5H23I5PJaE2EuATzYHkhFhrcmZJs=,iv:VA0q/z8umK3LhdQ0gvgVVUsXML1BdZ9puUs9uqGYjaI=,tag:9q1SVbAT+Uu+hr0AZtSShw==,type:str]
+        - ENC[AES256_GCM,data:WH1HUsc8WADvxhZ+Qw2UYgda3UjQKbjNmQZQDO0=,iv:TToVHZFZW7NrOHXeh6GPrxLLbK3qvJ9ckfBSL2SAews=,tag:a/25wVcSqw4cLx7zaNr/6A==,type:str]
 sops:
-    lastmodified: "2025-10-09T16:08:23Z"
-    mac: ENC[AES256_GCM,data:3h+ClIDBiRmkWs8mxLQP75mEs6jc6h0NEIAuipTsU8qSkMZv0nAm/zLaESIIZiJebjQSy0Xp8TpO+ZcqwdPSwBMRGmY1582i6MC63Z+6OZkho4esR41dO5h3ls4XeWcyoJfzlnwcJ842vdlOtTCWNqoucWyrQZt98mF+VYzySWE=,iv:oyKpX7v0BmvYeguYesiv1+dmADzMUpEiYs7IOuzFr+4=,tag:CtUF7w9dvcUMNTbnKDo1LQ==,type:str]
+    lastmodified: "2025-10-12T19:15:15Z"
+    mac: ENC[AES256_GCM,data:vQtIv4yzzQpxmwdx2Yeq/q2jjYcxpYGUdLtOinaswHUvuBUcLUZJPUAgOqEBfRS5rILF58OwcD+aFMuEI6UItMiOE2/HYWtC/YZ0K5lKugXsZuKY1Tn4yhG/bKLjKX4/OvN96364ivRueJS1Uvwn8a3mBtaPEIVWBC/IZF+sSII=,iv:OohIk7lcRSGp5eDibwkh7XUTCC15L71onfswiS1avJI=,tag:ytdJfxLz/7V5BljF7JklZg==,type:str]
     pgp:
         - created_at: "2025-10-04T14:53:25Z"
           enc: |-
@@ -31,4 +31,4 @@ sops:
             -----END PGP MESSAGE-----
           fp: 9CA5E024D20FAFF406A3DEF997FA133DF1875526
     encrypted_regex: ^(data|stringData|addresses)$
-    version: 3.10.2
+    version: 3.11.0
