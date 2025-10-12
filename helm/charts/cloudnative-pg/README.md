@@ -73,7 +73,7 @@ When using default values for initdb owner:
 apiVersion: v1
 kind: Secret
 metadata:
-  name: backup-credentials
+  name: cnpg-app-user
   namespace: <tenant-namespace>
 type: kubernetes.io/basic-auth
 stringData:
