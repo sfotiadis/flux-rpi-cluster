@@ -42,8 +42,8 @@ spec:
           - secretName: ca-crulabs
             hosts:
               - nextcloud.internal
-      persistence:
-        enabled: false
+#      persistence:
+#        enabled: false
 #        storageClass: nextcloud-storage
 #        size: 3500Gi
 #        accessMode: ReadWriteOnce
