@@ -39,4 +39,10 @@ spec:
     externalDatabase:
       enabled: true
       type: postgresql
-      host:
+      host: nextcloud-db-rw
+      database: nextcloud-db
+      existingSecret:
+        enabled: true
+        secretName: cnpg-app-user
+        usernameKey: username
+        passwordKey: password
