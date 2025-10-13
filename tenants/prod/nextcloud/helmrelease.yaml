@@ -46,6 +46,8 @@ spec:
         enabled: true
         storageClass: nextcloud-storage
         size: 3500Gi
+        accessMode: ReadWriteOnce
+
     internalDatabase:
       enabled: false
     externalDatabase:
