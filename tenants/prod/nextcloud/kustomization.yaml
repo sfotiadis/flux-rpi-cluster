@@ -4,6 +4,7 @@ resources:
   - ../../base/nextcloud
   - cert.yaml
   - postgres.yaml
+  - secrets
 
 patches:
   - path: helmrelease.yaml
