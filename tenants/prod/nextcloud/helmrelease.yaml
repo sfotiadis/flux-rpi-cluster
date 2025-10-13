@@ -55,6 +55,6 @@ spec:
 #        usernameKey: username
 #        passwordKey: password
     persistence:
-      enabled: true
+      enabled: false
       storageClass: nextcloud-storage
       size: 3500Gi
