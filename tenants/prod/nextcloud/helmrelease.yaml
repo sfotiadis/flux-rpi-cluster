@@ -30,9 +30,9 @@ spec:
       host: nextcloud.internal
       existingSecret:
         enabled: false
-#        secretName: nextcloud-admin
-#        usernameKey: username
-#        passwordKey: password
+        secretName: nextcloud-admin
+        usernameKey: username
+        passwordKey: password
       ingress:
         enabled: true
         className: nginx
@@ -46,15 +46,17 @@ spec:
       enabled: true
     externalDatabase:
       enabled: false
-#      type: postgresql
-#      host: nextcloud-db-rw
-#      database: nextcloud-db
-#      existingSecret:
-#        enabled: true
-#        secretName: cnpg-app-user
-#        usernameKey: username
-#        passwordKey: password
+      type: postgresql
+      host: nextcloud-db-rw
+      database: nextcloud-db
+      existingSecret:
+        enabled: true
+        secretName: cnpg-app-user
+        usernameKey: username
+        passwordKey: password
     persistence:
-      enabled: false
+      enabled: true
+      subPath: data
+      mountPath: /var/www/html/data
       storageClass: nextcloud-storage
       size: 3500Gi
