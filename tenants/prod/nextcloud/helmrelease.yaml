@@ -42,6 +42,10 @@ spec:
           - secretName: ca-crulabs
             hosts:
               - nextcloud.internal
+      persistence:
+        enabled: true
+        storageClass: nextcloud-storage
+        size: 3500Gi
     internalDatabase:
       enabled: false
     externalDatabase:
@@ -54,9 +58,3 @@ spec:
         secretName: cnpg-app-user
         usernameKey: username
         passwordKey: password
-    persistence:
-      enabled: true
-      subPath: data
-      mountPath: /var/www/html/data
-      storageClass: nextcloud-storage
-      size: 3500Gi
