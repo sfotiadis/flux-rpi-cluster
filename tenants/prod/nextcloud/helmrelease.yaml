@@ -28,8 +28,8 @@ spec:
             'logdateformat' => 'F d, Y H:i:s'
             );
       host: nextcloud.internal
-#      existingSecret:
-#        enabled: true
+      existingSecret:
+        enabled: false
 #        secretName: nextcloud-admin
 #        usernameKey: username
 #        passwordKey: password
