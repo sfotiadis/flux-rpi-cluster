@@ -46,3 +46,7 @@ spec:
         secretName: cnpg-app-user
         usernameKey: username
         passwordKey: password
+    persistence:
+      enabled: true
+      storageClass: nextcloud-storage
+      size: 3500Gi
