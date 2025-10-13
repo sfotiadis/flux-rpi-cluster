@@ -60,3 +60,7 @@ spec:
         secretName: cnpg-app-user
         usernameKey: username
         passwordKey: password
+    persistence:
+      enabled: true
+    ingress:
+      enabled: true
