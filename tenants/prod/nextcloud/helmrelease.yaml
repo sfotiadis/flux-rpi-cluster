@@ -44,8 +44,8 @@ spec:
               - nextcloud.internal
     internalDatabase:
       enabled: true
-#    externalDatabase:
-#      enabled: true
+    externalDatabase:
+      enabled: false
 #      type: postgresql
 #      host: nextcloud-db-rw
 #      database: nextcloud-db
