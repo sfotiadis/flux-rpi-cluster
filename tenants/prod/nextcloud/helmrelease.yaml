@@ -62,9 +62,9 @@ spec:
         passwordKey: password
     persistence:
       enabled: true
-      storageClass: nextcloud-storage
-      size: 3500Gi
-      accessMode: ReadWriteOnce
+#      storageClass: nextcloud-storage
+#      size: 3500Gi
+#      accessMode: ReadWriteOnce
     ingress:
       enabled: true
       className: nginx
