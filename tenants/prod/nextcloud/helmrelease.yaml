@@ -62,5 +62,16 @@ spec:
         passwordKey: password
     persistence:
       enabled: true
+      storageClass: nextcloud-storage
+      size: 3500Gi
+      accessMode: ReadWriteOnce
     ingress:
       enabled: true
+      className: nginx
+      hosts:
+        - host: nextcloud.internal
+      tls:
+        - secretName: ca-crulabs
+          hosts:
+            - nextcloud.internal
+
