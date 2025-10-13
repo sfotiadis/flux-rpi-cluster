@@ -17,3 +17,4 @@ spec:
       size: 10Gi
     backup:
       enabled: true
+      destinationPath: s3://nextcloud
