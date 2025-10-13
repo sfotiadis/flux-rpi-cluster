@@ -18,6 +18,15 @@ spec:
   values:
     replicaCount: 1
     nextcloud:
+      configs:
+        logging.config.php: |-
+          <?php
+          $CONFIG = array (
+            'log_type' => 'file',
+            'logfile' => 'nextcloud.log',
+            'loglevel' => 0,
+            'logdateformat' => 'F d, Y H:i:s'
+            );
       host: nextcloud.internal
       existingSecret:
         enabled: true
