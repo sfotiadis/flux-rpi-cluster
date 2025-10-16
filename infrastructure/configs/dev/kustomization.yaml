@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - ../base/storage
   - ../base/cert-manager
-  - metallb
+  #- metallb
