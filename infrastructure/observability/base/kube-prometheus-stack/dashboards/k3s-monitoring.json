@@ -2246,6 +2246,16 @@
   "templating": {
     "list": [
       {
+        "name": "DS_PROMETHEUS",
+        "type": "datasource",
+        "query": "prometheus",
+        "label": "Prometheus datasource",
+        "current": {
+          "text": "Prometheus",
+          "value": "Prometheus"
+        }
+      },
+      {
         "allValue": ".*",
         "current": {
           "text": "All",
