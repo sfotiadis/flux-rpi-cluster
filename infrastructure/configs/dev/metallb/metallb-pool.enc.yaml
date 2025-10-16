@@ -1,0 +1,34 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+    name: metallb-pool
+    namespace: metallb-system
+spec:
+    addresses:
+        - ENC[AES256_GCM,data:WH1HUsc8WADvxhZ+Qw2UYgda3UjQKbjNmQZQDO0=,iv:TToVHZFZW7NrOHXeh6GPrxLLbK3qvJ9ckfBSL2SAews=,tag:a/25wVcSqw4cLx7zaNr/6A==,type:str]
+sops:
+    lastmodified: "2025-10-12T19:15:15Z"
+    mac: ENC[AES256_GCM,data:vQtIv4yzzQpxmwdx2Yeq/q2jjYcxpYGUdLtOinaswHUvuBUcLUZJPUAgOqEBfRS5rILF58OwcD+aFMuEI6UItMiOE2/HYWtC/YZ0K5lKugXsZuKY1Tn4yhG/bKLjKX4/OvN96364ivRueJS1Uvwn8a3mBtaPEIVWBC/IZF+sSII=,iv:OohIk7lcRSGp5eDibwkh7XUTCC15L71onfswiS1avJI=,tag:ytdJfxLz/7V5BljF7JklZg==,type:str]
+    pgp:
+        - created_at: "2025-10-04T14:53:25Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA49FDTH2jIFGAQ//bUwHcSKjKRWvhXs059PvNIZ4pfIZXon6DUoyswjVijgc
+            tTEOfActUQFltme40/0fIm36+KFhJxi4omDkWLVhyqaGhzr+hckVro9OurpI0nFY
+            FnFEk7bd2paCsD/bSf5aF+A5s0ogM4V9j+F3iNbH7yTUdmaAfDGbwI3h0qhvuUAa
+            mkEkvod5EPx5EovNd4YhGgSj/QatQpIrMTYh2CSR27M0lELCyxTM0q1qcmh08Vlf
+            MIFFwxHfgEKgXgnotO8rTsGUjMWc4ZSkunc2XJpuwWwClAU9pTXiJCJX3DleCCPf
+            OzzsNYYr4obBa0XmqlhaAnkugEuKaEnMGmKyJsaod6g56lcO5/hVxPhlzJ2dvuLF
+            vnBtUoD+boRQfkPQDoVmXHZicM1ciQYjQnV3aKUJp3/vv5A8eNfC+Ntck4Gq44sD
+            NeTS1NcLZ9WgCE8aVJtzv+S4a7n8Gg90UNrzb9l8lNOzThiyLwzXTEPc1XJpbTPQ
+            51IyT4lcBO/X2MMyK89QZAADiKMTdt/by1UyZpnPv/skor6IuzX5XMAVm7OdM/UL
+            NGNzzxtQbyuawbFT/dK0RubK72mZHKEe3NYHktxYZmgTWEUGfjnr70LAltP22yoh
+            B4IimtGgc0tWnVml9KJH35E8Bem124E4PDJxh8YAU/lefH8VaEov4H6IKMEp0GXS
+            XAGRTmMktSTAUjhGd29cMLqqxr/rCYRI/PTUN+9oNvt/9OdtbKhGVz6pC91vw1Gi
+            IZqi0xXStpASbBKKRK2SzqJCivozCLVrNlyBYiSMLMUl3Y/OhVnmPEtLqTIo
+            =vpMN
+            -----END PGP MESSAGE-----
+          fp: 9CA5E024D20FAFF406A3DEF997FA133DF1875526
+    encrypted_regex: ^(data|stringData|addresses)$
+    version: 3.11.0
