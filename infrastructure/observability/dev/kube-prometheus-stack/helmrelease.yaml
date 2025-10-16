@@ -48,7 +48,7 @@ spec:
           enabled: true
 
     prometheus:
-      Ingress:
+      ingress:
         enabled: true
         ingressClassName: nginx
         hosts:
