@@ -12,4 +12,5 @@ spec:
     kind: ClusterIssuer
   dnsNames:
   - grafana.dev.crulabs.internal
+  - prometheus.dev.crulabs.internal
   - karma.dev.crulabs.internal

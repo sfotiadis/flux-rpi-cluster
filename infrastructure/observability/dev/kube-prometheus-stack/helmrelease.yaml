@@ -48,6 +48,15 @@ spec:
           enabled: true
 
     prometheus:
+      Ingress:
+        enabled: true
+        ingressClassName: nginx
+        hosts:
+          - prometheus.dev.crulabs.internal
+        tls:
+          - secretName: ca-crulabs
+            hosts:
+              - prometheus.dev.crulabs.internal
       prometheusSpec:
         additionalScrapeConfigs:
           - job_name: 'node-exporter'
