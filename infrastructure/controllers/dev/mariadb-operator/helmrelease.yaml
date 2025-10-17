@@ -15,11 +15,11 @@ spec:
         kind: HelmRepository
         name: mariadb-operator
         namespace: mariadb-operator
-      values:
-        metrics:
+    values:
+      metrics:
+        enabled: true
+        serviceMonitor:
           enabled: true
-          serviceMonitor:
-            enabled: true
   upgrade:
     remediation:
       retries: 3
