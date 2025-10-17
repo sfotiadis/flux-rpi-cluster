@@ -6,3 +6,4 @@ resources:
   - ../base/metallb
   - ingress-nginx
   - cloudnative-pg
+  - mariadb-operator
