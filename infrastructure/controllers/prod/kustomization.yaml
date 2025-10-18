@@ -4,6 +4,8 @@ resources:
   - ../base/cert-manager
   - ../base/provisioner
   - ../base/metallb
-  - ingress-nginx
   - cloudnative-pg
-  - minio
+  - ingress-nginx
+  - mariadb-operator
+  - ceph-csi
+  # - minio

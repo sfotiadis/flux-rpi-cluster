@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: ceph-secret
+    namespace: ceph-csi
+stringData:
+    userID: ENC[AES256_GCM,data:Iv3Q,iv:tewP0ZwEOd+GsAHvnPhquQjRLV6bRCq9KjEyfLckukM=,tag:H44hNnq9ELwtJxGf/7WaLg==,type:str]
+    userKey: ENC[AES256_GCM,data:j6DH272QPvrgKOTvJGJzdKdTWw90mUhFHegVl1/zfqNl/7SWrKcDdQ==,iv:shijQBGhnogiXcf3CtDKau5yytmcf1sGQStWoGTNDqU=,tag:O3KnLM6St5y5tpTfra+O8Q==,type:str]
+sops:
+    lastmodified: "2025-10-18T12:50:02Z"
+    mac: ENC[AES256_GCM,data:t12AvZoVS7/B1Cu3cYRGW8LLDTwi5ABd5zdtxxr7O2VTAtDATVdAWbbjj+slvSrT79IZAwLpQdiFDDaK6m1mDfV2GSPzDbDepJgSyA3jW2gmM0YBP/nLQCn0lzh5Q6pOILS8bznEBQ/3nt5L8vYbxbLd4z9VYFwmj4SifZEb8Z0=,iv:s7Y7OOvKq7zBbP+17YMgVota0lUO7MclFa+S3x+c6O4=,tag:LYy77yF7wYevvkh+E2/Ntg==,type:str]
+    pgp:
+        - created_at: "2025-10-18T12:19:27Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA49FDTH2jIFGARAAgpJ6TtvLF/6HAfh0774PBoLx4hc+lXJnnHFKJQVc9YyD
+            I2TK/0pXDezCbSsWw5sO08KrW9P9IINjv3DbfGDamUjHtSN2Mml/LrLuaUY/qyU4
+            8wAtotqoupV5UM78v6iyBtyhqm2WYl6XPCeVFbvKjtvbX1GuU/iZ69p+Rh1wI6RQ
+            DZAV7wXilXvlPkkSxl/DNNq5RDjaEfCO1VHNE3g29WYWclJJFtKKOxklXME3UBJ6
+            ucEKPez/mL8Q05huD6RHNDYSC0jS52YS+Hwel8RlVCKaw3rWVrz/oCu3SOh7LejJ
+            mm3lHWRpg6iEGRhM4TcmzEC/1E2pHtTTFyRan7ci5moHkttRydagFFNT5E0Fkc8Y
+            5x22SKFTFmU5jkRJcqbUrbgub8l9zAR1ClsK4o97uiZb+75TMysSZowKdZJ0J5cz
+            CwK+f69CXjm/XzW2IeA2w/WzgYL0S3eFHUJYv/lREwiGPbuCm0CIUm/tUfIz4HyA
+            482QxIFHhVhKwZjrgOLOLxBJ719Lkis9sbQT/3jJhuwTwQ2BzJnDHeL2h+Z+73cg
+            VmTGPZEHE9cIXczhqxuhmh/vNZ1ZS5KhQSQs1cq/O7kreKa3U443TcpbGxH1aJBx
+            yxEr/C62Y1PqhCIt7YuCHwifweNBMLTC64WCnnjt19eDxbr2zUmH2aHWt/97b6DS
+            XgH4RqLP1JU7bF0FtGWZ+RhVuEHR3D0FRj+JK3T1q6aV/gUodJ+NaMFCxo9uI25Y
+            ngsHF8v+W3vQRfIS/s95yvJbmIBT+I6Ycoh5d3DY6ZmuHptGZH+amgoeUlBIAdg=
+            =SzWq
+            -----END PGP MESSAGE-----
+          fp: 9CA5E024D20FAFF406A3DEF997FA133DF1875526
+    encrypted_regex: ^(data|stringData|addresses)$
+    version: 3.11.0

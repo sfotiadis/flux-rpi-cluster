@@ -1,0 +1,84 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ceph-csi-rbd
+  namespace: ceph-csi
+spec:
+  releaseName: ceph-csi-rbd
+  chart:
+    spec:
+      chart: ceph-csi-rbd
+      version: "v3.15.0"
+      sourceRef:
+        kind: HelmRepository
+        name: ceph-csi
+        namespace: ceph-csi
+  interval: 5m
+  values:
+    rbac:
+      create: true
+
+    serviceAccounts:
+      nodeplugin:
+        create: true
+      provisioner:
+        create: true
+
+    csiConfig:
+      - clusterID: a0f1d1f4-ac0f-4e4f-b06d-34e8deec52f8
+        monitors:
+          - "ceph.crulabs.internal:6789"
+        rbd:
+          netNamespaceFilePath: "/var/lib/kubelet/plugins/rbd.csi.ceph.com/net"
+          mirrorDaemonCount: 1
+        readAffinity:
+          enabled: true
+          crushLocationLabels:
+            - topology.kubernetes.io/region
+            - topology.kubernetes.io/zone
+
+    CSIDriver:
+      fsGroupPolicy: "File"
+      seLinuxMount: true
+
+    nodeplugin:
+      imagePullSecrets:
+        - name:ceph-secret
+      plugin:
+        image:
+          repository: quay.io/cephcsi/cephcsi
+          tag: v3.15.0
+          pullPolicy: IfNotPresent
+
+    provisioner:
+      imagePullSecrets:
+        - name: ceph-secret
+      deployController: true
+      fstype: ext4
+      reclaimPolicy: Retain
+      allowVolumeExpansion: true
+      provisionerSecret: ceph-secret
+      provisionerSecretNamespace: ceph-csi
+      nodeStageSecret: ceph-secret
+      nodeStageSecretNamespace: ceph-csi
+      controllerExpandSecret: ceph-secret
+      controllerExpandSecretNamespace: ceph-csi
+      storageClass:
+        create: true
+        name: csi-rbd-sc
+        annotations:
+          storageclass.kubernetes.io/is-default-class: "true"
+        clusterID: a0f1d1f4-ac0f-4e4f-b06d-34e8deec52f8
+        pool: replicapool
+        dataPool: k8s-pool
+        imageFeatures: "layering"
+        provisionerSecret: ceph-secret
+        provisionerSecretNamespace: ceph-csi
+        nodeStageSecret: ceph-secret
+        nodeStageSecretNamespace: ceph-csi
+        controllerExpandSecret: ceph-secret
+        controllerExpandSecretNamespace: ceph-csi
+        fstype: ext4
+        reclaimPolicy: Retain
+        allowVolumeExpansion: true
+        mountOptions: []
