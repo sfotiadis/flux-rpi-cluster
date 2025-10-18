@@ -7,7 +7,6 @@ resources:
 
 patches:
 - patch: |-
-    apiVersion: metallb.io/v1beta1
     kind: StorageClass
     metadata:
       name: local-path
