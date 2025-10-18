@@ -55,6 +55,20 @@ spec:
           folder: /var/lib/grafana/dashboards/custom
         datasources:
           enabled: true
+            label: grafana_datasource
+            isDefaultDatasourceEnabled: true
+            name: rpi-cluster-prod
+            uid: rpi-cluster-prod
+      additionalDataSources:
+        - name: rpi-cluster-dev
+          type: prometheus
+          url: https://prometheus.dev.crulabs.internal
+          access: proxy
+          isDefault: false
+          editable: true
+          jsonData:
+            httpMethod: GET
+            tlsSkipVerify: true
 
     prometheus:
       prometheusSpec:
