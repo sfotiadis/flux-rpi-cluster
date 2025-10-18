@@ -51,6 +51,7 @@ spec:
           pullPolicy: IfNotPresent
 
     provisioner:
+      replicaCount: 1
       imagePullSecrets:
         - name: ceph-secret
       deployController: true
