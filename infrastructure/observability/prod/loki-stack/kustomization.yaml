@@ -1,0 +1,17 @@
+resources:
+  - ../../base/loki-stack
+
+patches:
+  - target:
+      kind: HelmRelease
+      name: loki
+    patch: |-
+      apiVersion: helm.toolkit.fluxcd.io/v2
+      kind: HelmRelease
+      metadata:
+        name: loki
+      spec:
+        values:
+          loki:
+            persistence:
+              storageClass: csi-rbd-sc
