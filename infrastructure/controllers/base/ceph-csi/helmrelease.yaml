@@ -63,22 +63,22 @@ spec:
       nodeStageSecretNamespace: ceph-csi
       controllerExpandSecret: ceph-secret
       controllerExpandSecretNamespace: ceph-csi
-      storageClass:
-        create: true
-        name: csi-rbd-sc
-        annotations:
-          storageclass.kubernetes.io/is-default-class: "true"
-        clusterID: a0f1d1f4-ac0f-4e4f-b06d-34e8deec52f8
-        pool: replicapool
-        dataPool: k8s-pool
-        imageFeatures: "layering"
-        provisionerSecret: ceph-secret
-        provisionerSecretNamespace: ceph-csi
-        nodeStageSecret: ceph-secret
-        nodeStageSecretNamespace: ceph-csi
-        controllerExpandSecret: ceph-secret
-        controllerExpandSecretNamespace: ceph-csi
-        fstype: ext4
-        reclaimPolicy: Retain
-        allowVolumeExpansion: true
-        mountOptions: []
+    storageClass:
+      create: true
+      name: csi-rbd-sc
+      annotations:
+        storageclass.kubernetes.io/is-default-class: "true"
+      clusterID: a0f1d1f4-ac0f-4e4f-b06d-34e8deec52f8
+      pool: replicapool
+      dataPool: k8s-pool
+      imageFeatures: "layering"
+      provisionerSecret: ceph-secret
+      provisionerSecretNamespace: ceph-csi
+      nodeStageSecret: ceph-secret
+      nodeStageSecretNamespace: ceph-csi
+      controllerExpandSecret: ceph-secret
+      controllerExpandSecretNamespace: ceph-csi
+      fstype: ext4
+      reclaimPolicy: Retain
+      allowVolumeExpansion: true
+      mountOptions: []
