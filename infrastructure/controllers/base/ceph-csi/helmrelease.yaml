@@ -27,7 +27,7 @@ spec:
     csiConfig:
       - clusterID: a0f1d1f4-ac0f-4e4f-b06d-34e8deec52f8
         monitors:
-          - "ceph.crulabs.internal:6789"
+          - "pve.crulabs.internal:6789"
         rbd:
           netNamespaceFilePath: "/var/lib/kubelet/plugins/rbd.csi.ceph.com/net"
           mirrorDaemonCount: 1
