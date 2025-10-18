@@ -43,7 +43,7 @@ spec:
 
     nodeplugin:
       imagePullSecrets:
-        - name:ceph-secret
+        - name: ceph-secret
       plugin:
         image:
           repository: quay.io/cephcsi/cephcsi
