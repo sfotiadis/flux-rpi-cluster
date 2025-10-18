@@ -82,3 +82,4 @@ spec:
       reclaimPolicy: Retain
       allowVolumeExpansion: true
       mountOptions: []
+    kubeletDir: /var/lib/rancher/k3s/agent/kubelet
