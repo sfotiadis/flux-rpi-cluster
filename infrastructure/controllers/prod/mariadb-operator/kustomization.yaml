@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: mariadb-operator
+
+resources:
+  - ../../base/mariadb-operator
+  - helmrelease.yaml
+
+patches:
+  - target:
+      kind: HelmRelease
+      name: mariadb-operator-crds
+    patch: |
+      - op: replace
+        path: /spec/chart/spec/version
+        value: "25.8.4"

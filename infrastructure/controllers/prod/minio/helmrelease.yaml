@@ -15,7 +15,7 @@ spec:
         namespace: minio
   values:
     mode: distributed
-    replicas: 2
+    replicas: 3
     persistence:
       enabled: true
       size: 45Gi

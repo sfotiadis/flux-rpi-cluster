@@ -6,6 +6,6 @@ resources:
   - ../base/metallb
   - cloudnative-pg
   - ingress-nginx
-  - mariadb-operator
+   - mariadb-operator
   - ceph-csi
   # - minio
