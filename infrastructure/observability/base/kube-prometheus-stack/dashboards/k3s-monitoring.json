@@ -2249,7 +2249,7 @@
         "name": "DS_PROMETHEUS",
         "type": "datasource",
         "query": "prometheus",
-        "label": "Prometheus datasource",
+        "label": "Cluster",
         "current": {
           "text": "Prometheus",
           "value": "Prometheus"

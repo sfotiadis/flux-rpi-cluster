@@ -1346,7 +1346,7 @@
         },
         "hide": 0,
         "includeAll": false,
-        "label": "Datasource",
+        "label": "Cluster",
         "multi": false,
         "name": "DS_PROMETHEUS",
         "options": [],
