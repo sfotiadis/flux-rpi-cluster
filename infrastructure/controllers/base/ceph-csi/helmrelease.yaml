@@ -29,7 +29,7 @@ spec:
         monitors:
           - "pve.crulabs.internal:6789"
         rbd:
-          netNamespaceFilePath: "/var/lib/kubelet/plugins_registry/rbd.csi.ceph.com/net"
+          netNamespaceFilePath: "/var/lib/kubelet/plugins/rbd.csi.ceph.com/net"
           mirrorDaemonCount: 1
         readAffinity:
           enabled: true
@@ -83,4 +83,4 @@ spec:
       reclaimPolicy: Retain
       allowVolumeExpansion: true
       mountOptions: []
-    kubeletDir: /var/lib/rancher/k3s/agent/kubelet/plugins_registry
+    kubeletDir: /var/lib/rancher/k3s/agent/kubelet/
