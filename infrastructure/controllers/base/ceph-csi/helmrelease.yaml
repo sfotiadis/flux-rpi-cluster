@@ -44,8 +44,6 @@ spec:
     nodeplugin:
       hostNetwork: true
       hostPID: true
-      # Use the canonical kubelet directory that k3s exposes (/var/lib/kubelet)
-      # The k3s specific path (/var/lib/rancher/k3s/agent/kubelet) is still mounted read-only for compatibility.
       kubeletDir: /var/lib/kubelet
       imagePullSecrets:
         - name: ceph-secret
@@ -60,14 +58,11 @@ spec:
             add: ["SYS_ADMIN"]
           allowPrivilegeEscalation: true
         volumeMounts:
-          - name: plugin-dir
+          - name: socket-dir
             mountPath: /csi
           - name: kubelet-dir-canonical
             mountPath: /var/lib/kubelet
             mountPropagation: Bidirectional
-          - name: kubelet-dir-k3s
-            mountPath: /var/lib/rancher/k3s/agent/kubelet
-            readOnly: true
           - name: sys
             mountPath: /sys
           - name: dev
@@ -81,7 +76,7 @@ spec:
         volumeMounts:
           - name: registration-dir
             mountPath: /registration
-          - name: plugin-dir
+          - name: socket-dir
             mountPath: /csi
       tolerations:
         - operator: Exists
@@ -91,17 +86,13 @@ spec:
           hostPath:
             path: /var/lib/kubelet/plugins_registry
             type: DirectoryOrCreate
-        - name: plugin-dir
+        - name: socket-dir
           hostPath:
-            path: /var/lib/kubelet/plugins
+            path: /var/lib/kubelet/plugins/rbd.csi.ceph.com
             type: DirectoryOrCreate
         - name: kubelet-dir-canonical
           hostPath:
             path: /var/lib/kubelet
-            type: Directory
-        - name: kubelet-dir-k3s
-          hostPath:
-            path: /var/lib/rancher/k3s/agent/kubelet
             type: Directory
         - name: sys
           hostPath:
