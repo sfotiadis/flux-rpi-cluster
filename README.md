@@ -12,10 +12,10 @@
 [![Loki](https://img.shields.io/badge/Logging-Loki-5A2D81?logo=grafana&logoColor=white)](https://grafana.com/oss/loki/)
 [![MinIO](https://img.shields.io/badge/Storage-MinIO-9400d3?logo=minio&logoColor=white)](https://min.io/)
 
-This repository contains the GitOps configuration for my personal Raspberry Pi Kubernetes cluster (k3s).
+This repository contains the GitOps configuration for my personal Raspberry Pi Kubernetes clusters (k3s), consisting of a development (dev) and a production (prod) environment.
 [Flux](https://fluxcd.io/) continuously reconciles the cluster state with the manifests stored here, ensuring a reproducible, self-healing setup.
 
-The Cluster itself is provisioned by using [sfotiadis/ansible-rpi-cluster](https://github.com/sfotiadis/ansible-rpi-cluster), which installs k3s and [Cilium](https://cilium.io/).
+The clusters themselves are provisioned by using [sfotiadis/ansible-rpi-cluster](https://github.com/sfotiadis/ansible-rpi-cluster), which installs k3s and [Cilium](https://cilium.io/).
 
 
 ## Repository Structure
@@ -59,5 +59,5 @@ This allows secrets to be safely committed to Git while still enabling Flux to d
 
 ## Disclaimer
 
-This repository is a personal homelab project running on a Raspberry Pi cluster.
+This repository is a personal homelab project running on Raspberry Pi clusters.
 It is not intended for production use but serves as a playground for experimenting with GitOps and Kubernetes ecosystem tooling.
