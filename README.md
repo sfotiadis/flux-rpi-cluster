@@ -23,15 +23,15 @@ The clusters themselves are provisioned by using [sfotiadis/ansible-rpi-cluster]
 ```text
 .
 ├── clusters
-│   ├── rpi-cluster-dev               # Flux Kustomizations for Dev
-│   └── rpi-cluster-prod              # Flux Kustomizations for Prod
-├── docs                              # Additional docs (SOPS, networking, ...)
-├── helm                              # Custom or adapted Helm charts tailored for this cluster
+│   ├── rpi-cluster-dev   # Flux Kustomizations for Dev
+│   └── rpi-cluster-prod  # Flux Kustomizations for Prod
+├── docs                  # Additional docs (SOPS, networking, ...)
+├── helm                  # Custom or adapted Helm charts tailored for this cluster
 ├── infrastructure
-│   ├── configs                       # Cluster level config
-│   ├── controllers                   # Operators & controllers
-│   └── observability                 # Monitoring & logging
-└── tenants                           # Application layer (base + dev/prod overlays; non-infrastructure workloads) 
+│   ├── configs           # Cluster level config
+│   ├── controllers       # Operators & controllers
+│   └── observability     # Monitoring & logging
+└── tenants               # Application layer 
 ```
 
 ### Environments
