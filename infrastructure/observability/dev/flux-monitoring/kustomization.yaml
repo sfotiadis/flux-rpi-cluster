@@ -1,0 +1,46 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../base/flux-monitoring
+
+patches:
+  - target:
+      kind: Service
+      name: source-controller-metrics
+      namespace: flux-system
+    patch: |-
+      - op: add
+        path: /metadata/labels/app.kubernetes.io~1environment
+        value: dev
+  - target:
+      kind: Service
+      name: notification-controller-metrics
+      namespace: flux-system
+    patch: |-
+      - op: add
+        path: /metadata/labels/app.kubernetes.io~1environment
+        value: dev
+  - target:
+      kind: Service
+      name: helm-controller-metrics
+      namespace: flux-system
+    patch: |-
+      - op: add
+        path: /metadata/labels/app.kubernetes.io~1environment
+        value: dev
+  - target:
+      kind: Service
+      name: kustomize-controller-metrics
+      namespace: flux-system
+    patch: |-
+      - op: add
+        path: /metadata/labels/app.kubernetes.io~1environment
+        value: dev
+  - target:
+      kind: ServiceMonitor
+      name: flux-controllers
+      namespace: flux-system
+    patch: |-
+      - op: add
+        path: /metadata/labels/app.kubernetes.io~1environment
+        value: dev

@@ -5,3 +5,4 @@ resources:
   - ../base/loki-stack
   - kube-prometheus-stack
   - certificates
+  - flux-monitoring

@@ -6,3 +6,4 @@ resources:
   - loki-stack
   - kube-prometheus-stack
   - certificates
+  - flux-monitoring
