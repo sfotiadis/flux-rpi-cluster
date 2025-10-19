@@ -47,31 +47,6 @@ spec:
       kubeletDir: /var/lib/rancher/k3s/agent/kubelet
       imagePullSecrets:
         - name: ceph-secret
-      initContainers:
-        - name: setup-kubelet-symlinks
-          image: alpine:latest
-          command:
-            - sh
-            - -c
-            - |
-              # Create symlink from /var/lib/kubelet to /var/lib/rancher/k3s/agent/kubelet if it doesn't exist
-              if [ ! -d /host/var/lib/kubelet ] && [ -d /host/var/lib/rancher/k3s/agent/kubelet ]; then
-                mkdir -p /host/var/lib
-                ln -sf /var/lib/rancher/k3s/agent/kubelet /host/var/lib/kubelet
-                echo "Created symlink: /var/lib/kubelet -> /var/lib/rancher/k3s/agent/kubelet"
-              fi
-              
-              # Ensure plugins_registry directory exists
-              mkdir -p /host/var/lib/kubelet/plugins_registry
-              mkdir -p /host/var/lib/kubelet/plugins
-              
-              echo "Kubelet directories setup complete"
-          securityContext:
-            privileged: true
-          volumeMounts:
-            - name: host-root
-              mountPath: /host
-              mountPropagation: Bidirectional
       plugin:
         image:
           repository: quay.io/cephcsi/cephcsi
@@ -97,7 +72,7 @@ spec:
             readOnly: true
       registrar:
         args:
-          - "--kubelet-registration-path=/var/lib/kubelet/plugins_registry/rbd.csi.ceph.com-reg.sock"
+          - "--kubelet-registration-path=/var/lib/rancher/k3s/agent/kubelet/plugins_registry/rbd.csi.ceph.com-reg.sock"
         volumeMounts:
           - name: registration-dir
             mountPath: /registration
@@ -107,17 +82,13 @@ spec:
         - operator: Exists
       nodeSelector: {}
       volumes:
-        - name: host-root
-          hostPath:
-            path: /
-            type: Directory
         - name: registration-dir
           hostPath:
-            path: /var/lib/kubelet/plugins_registry
+            path: /var/lib/rancher/k3s/agent/kubelet/plugins_registry
             type: DirectoryOrCreate
         - name: plugin-dir
           hostPath:
-            path: /var/lib/kubelet/plugins
+            path: /var/lib/rancher/k3s/agent/kubelet/plugins
             type: DirectoryOrCreate
         - name: kubelet-dir
           hostPath:
