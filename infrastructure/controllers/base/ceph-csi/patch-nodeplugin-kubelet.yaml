@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: ceph-csi-rbd-nodeplugin
+  namespace: ceph-csi
+spec:
+  template:
+    spec:
+      volumes:
+        - name: socket-dir
+          hostPath:
+            path: /var/lib/kubelet/plugins/rbd.csi.ceph.com
+            type: DirectoryOrCreate
+        - name: registration-dir
+          hostPath:
+            path: /var/lib/kubelet/plugins_registry
+            type: DirectoryOrCreate
+        - name: plugin-dir
+          hostPath:
+            path: /var/lib/kubelet/plugins
+            type: DirectoryOrCreate
+        - name: mountpoint-dir
+          hostPath:
+            path: /var/lib/kubelet/pods
+            type: DirectoryOrCreate
+      containers:
+        - name: driver-registrar
+          args:
+            - --kubelet-registration-path=/var/lib/kubelet/plugins_registry/rbd.csi.ceph.com-reg.sock
+        - name: csi-rbdplugin
+          volumeMounts:
+            - name: socket-dir
+              mountPath: /csi
+            - name: mountpoint-dir
+              mountPath: /var/lib/kubelet/pods
+              mountPropagation: Bidirectional
+        - name: liveness-prometheus
+          volumeMounts:
+            - name: socket-dir
+              mountPath: /csi

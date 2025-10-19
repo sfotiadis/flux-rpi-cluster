@@ -14,6 +14,10 @@ spec:
         name: ceph-csi
         namespace: ceph-csi
   interval: 5m
+  postRenderers:
+    - kustomize:
+        patches:
+          - path: patch-nodeplugin-kubelet.yaml
   values:
     rbac:
       create: true
@@ -140,5 +144,4 @@ spec:
       allowVolumeExpansion: true
       mountOptions: []
     
-    # k3s specific configuration
-    kubeletDir: /var/lib/rancher/k3s/agent/kubelet
+  # Remove deprecated k3s specific override; we standardize on /var/lib/kubelet via patch
