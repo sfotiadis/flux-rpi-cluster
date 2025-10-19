@@ -7,6 +7,7 @@
 [![Grafana](https://img.shields.io/badge/Dashboard-Grafana-F46800?logo=grafana&logoColor=white)](https://grafana.com/)
 [![Karma](https://img.shields.io/badge/Alerts-Karma-6D5DF7)](https://github.com/prymitive/karma)
 [![Postgres](https://img.shields.io/badge/Database-CloudNativePG-336791?logo=postgresql&logoColor=white)](https://cloudnative-pg.io/)
+[![MariaDB](https://img.shields.io/badge/Database-MariaDB-1F5FA8?logo=mariadb&logoColor=white)](https://mariadb.org/)
 [![NGINX](https://img.shields.io/badge/Ingress-NGINX-009639?logo=nginx&logoColor=white)](https://kubernetes.github.io/ingress-nginx/)
 [![Loki](https://img.shields.io/badge/Logging-Loki-5A2D81?logo=grafana&logoColor=white)](https://grafana.com/oss/loki/)
 [![MinIO](https://img.shields.io/badge/Storage-MinIO-9400d3?logo=minio&logoColor=white)](https://min.io/)
@@ -22,29 +23,34 @@ The Cluster itself is provisioned by using [sfotiadis/ansible-rpi-cluster](https
 ```text
 .
 ├── clusters
-│   └── rpi-cluster
-│       └── flux-system               # Flux bootstrap & cluster entrypoint
-└── infrastructure
-    ├── configs
-    │   ├── cert-manager              # Issuers, secrets, and cert-manager configs
-    │   ├── metallb                   # Address pools, L2Advertisements
-    │   └── storage                   # Local-path StorageClass
-    ├── controllers
-    │   ├── cert-manager              # cert-manager operator
-    │   ├── cloudnative-pg            # CloudNativePG operator for PostgreSQL
-    │   ├── ingress-nginx             # NGINX ingress controller
-    │   ├── metallb                   # MetalLB controller
-    │   ├── minio                     # MinIO operator & distributed S3 storage
-    │   ├── openbao                   # OpenBao operator (experimental, not in use yet)
-    │   └── provisioner               # Local Path Provisioner
-    ├── observability
-    │   ├── certificates              # Certs for monitoring stack
-    │   ├── karma                     # Alert dashboard UI
-    │   ├── kube-prometheus-stack     # Monitoring & alerting
-    │   ├── loki-stack                # Loki & Promtail for logs
-    │   └── notifications             # Flux notifications via GitHub
-    └── tenants
+│   ├── rpi-cluster-dev               # Flux Kustomizations for Dev
+│   └── rpi-cluster-prod              # Flux Kustomizations for Prod
+├── docs                              # Additional docs (SOPS, networking, ...)
+├── helm                              # Custom or adapted Helm charts tailored for this cluster
+├── infrastructure
+│   ├── configs                       # Cluster level config
+│   ├── controllers                   # Operators & controllers
+│   └── observability                 # Monitoring & logging
+└── tenants                           # Application layer (base + dev/prod overlays; non-infrastructure workloads) 
 ```
+
+### Environments
+`clusters/rpi-cluster-dev` and `clusters/rpi-cluster-prod` reference different overlay paths under `infrastructure/*` and `tenants/*`. Patches adjust replica counts and storage classes (`local-path` vs `nfs-rwx`).
+
+## Components (selected)
+
+| Category        | Components |
+|-----------------|------------|
+| Networking      | MetalLB, Cilium |
+| Ingress         | ingress-nginx |
+| Certificates    | cert-manager |
+| Database        | CloudNativePG, MariaDB Operator |
+| Object Storage  | MinIO |
+| Monitoring      | kube-prometheus-stack, Karma |
+| Logging         | Loki Stack |
+| GitOps          | Flux controller metrics + GitHub alerts |
+| Secrets/Vault   | OpenBao (experimental), Kratos (WIP) |
+| Storage         | NFS Subdir External Provisioner (prod), Local Path Provisioner (dev) |
 
 ## Secrets Management
 
