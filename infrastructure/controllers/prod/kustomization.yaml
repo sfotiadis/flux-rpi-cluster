@@ -6,5 +6,5 @@ resources:
   - cloudnative-pg
   - ingress-nginx
   - mariadb-operator
-  #- minio
+  - minio
   - ../base/storage/nfs
