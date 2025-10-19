@@ -7,4 +7,4 @@ resources:
   - ingress-nginx
   - mariadb-operator
   - ceph-csi
-  - minio
+  #- minio
