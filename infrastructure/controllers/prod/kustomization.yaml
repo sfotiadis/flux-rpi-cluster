@@ -7,3 +7,4 @@ resources:
   - ingress-nginx
   - mariadb-operator
   #- minio
+  - ../base/storage/nfs
