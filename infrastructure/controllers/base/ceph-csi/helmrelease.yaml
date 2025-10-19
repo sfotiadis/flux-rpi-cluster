@@ -44,6 +44,7 @@ spec:
     nodeplugin:
       hostNetwork: true
       hostPID: true
+      kubeletDir: /var/lib/rancher/k3s/agent/kubelet
       imagePullSecrets:
         - name: ceph-secret
       plugin:
@@ -60,12 +61,15 @@ spec:
           - name: plugin-dir
             mountPath: /csi
           - name: kubelet-dir
-            mountPath: /var/lib/kubelet
+            mountPath: /var/lib/rancher/k3s/agent/kubelet
             mountPropagation: Bidirectional
           - name: sys
             mountPath: /sys
           - name: dev
             mountPath: /dev
+          - name: lib-modules
+            mountPath: /lib/modules
+            readOnly: true
       registrar:
         args:
           - "--kubelet-registration-path=/var/lib/rancher/k3s/agent/kubelet/plugins_registry/rbd.csi.ceph.com-reg.sock"
@@ -94,6 +98,10 @@ spec:
         - name: dev
           hostPath:
             path: /dev
+            type: Directory
+        - name: lib-modules
+          hostPath:
+            path: /lib/modules
             type: Directory
 
     provisioner:
