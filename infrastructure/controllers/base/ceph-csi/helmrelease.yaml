@@ -42,6 +42,7 @@ spec:
       seLinuxMount: true
 
     nodeplugin:
+      hostNetwork: true
       imagePullSecrets:
         - name: ceph-secret
       plugin:
