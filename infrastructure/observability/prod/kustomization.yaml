@@ -3,6 +3,6 @@ kind: Kustomization
 resources:
   - ../base/flux-monitoring
   - ../base/karma
-  - loki-stack
+  # - loki-stack  # temporarily disabled per user request
   - kube-prometheus-stack
   - certificates

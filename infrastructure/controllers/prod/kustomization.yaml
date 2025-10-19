@@ -6,5 +6,4 @@ resources:
   - cloudnative-pg
   - ingress-nginx
   - mariadb-operator
-  - ceph-csi
   #- minio
