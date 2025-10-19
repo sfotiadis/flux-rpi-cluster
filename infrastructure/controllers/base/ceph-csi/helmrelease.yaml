@@ -50,6 +50,9 @@ spec:
           repository: quay.io/cephcsi/cephcsi
           tag: v3.15.0
           pullPolicy: IfNotPresent
+      registrar:
+        args:
+          - "--kubelet-registration-path=/var/lib/rancher/k3s/agent/kubelet/plugins_registry/rbd.csi.ceph.com-reg.sock"
 
     provisioner:
       replicaCount: 1
