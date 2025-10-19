@@ -29,7 +29,7 @@ spec:
         monitors:
           - "pve.crulabs.internal:6789"
         rbd:
-          netNamespaceFilePath: "/var/lib/kubelet/plugins/rbd.csi.ceph.com/net"
+          netNamespaceFilePath: "/var/lib/rancher/k3s/agent/kubelet/plugins/rbd.csi.ceph.com/net"
           mirrorDaemonCount: 1
         readAffinity:
           enabled: true
@@ -43,6 +43,7 @@ spec:
 
     nodeplugin:
       hostNetwork: true
+      hostPID: true
       imagePullSecrets:
         - name: ceph-secret
       plugin:
@@ -50,9 +51,50 @@ spec:
           repository: quay.io/cephcsi/cephcsi
           tag: v3.15.0
           pullPolicy: IfNotPresent
+        securityContext:
+          privileged: true
+          capabilities:
+            add: ["SYS_ADMIN"]
+          allowPrivilegeEscalation: true
+        volumeMounts:
+          - name: plugin-dir
+            mountPath: /csi
+          - name: kubelet-dir
+            mountPath: /var/lib/kubelet
+            mountPropagation: Bidirectional
+          - name: sys
+            mountPath: /sys
+          - name: dev
+            mountPath: /dev
       registrar:
         args:
           - "--kubelet-registration-path=/var/lib/rancher/k3s/agent/kubelet/plugins_registry/rbd.csi.ceph.com-reg.sock"
+        volumeMounts:
+          - name: registration-dir
+            mountPath: /registration
+          - name: plugin-dir
+            mountPath: /csi
+      volumes:
+        - name: registration-dir
+          hostPath:
+            path: /var/lib/rancher/k3s/agent/kubelet/plugins_registry
+            type: Directory
+        - name: plugin-dir
+          hostPath:
+            path: /var/lib/rancher/k3s/agent/kubelet/plugins
+            type: DirectoryOrCreate
+        - name: kubelet-dir
+          hostPath:
+            path: /var/lib/rancher/k3s/agent/kubelet
+            type: Directory
+        - name: sys
+          hostPath:
+            path: /sys
+            type: Directory
+        - name: dev
+          hostPath:
+            path: /dev
+            type: Directory
 
     provisioner:
       replicaCount: 1
@@ -86,4 +128,6 @@ spec:
       reclaimPolicy: Retain
       allowVolumeExpansion: true
       mountOptions: []
-    kubeletDir: /var/lib/rancher/k3s/agent/kubelet/
+    
+    # k3s specific configuration
+    kubeletDir: /var/lib/rancher/k3s/agent/kubelet
