@@ -71,21 +71,53 @@ spec:
             mountPath: /lib/modules
             readOnly: true
       registrar:
-        args:
-          - "--kubelet-registration-path=/var/lib/rancher/k3s/agent/kubelet/plugins_registry/rbd.csi.ceph.com-reg.sock"
         volumeMounts:
-          - name: registration-dir
-            mountPath: /registration
-          - name: plugin-dir
-            mountPath: /csi
+          - name: registration-dir-k3s
+            mountPath: /registration-k3s
+          - name: registration-dir-kubelet
+            mountPath: /registration-kubelet
+          - name: plugin-dir-k3s
+            mountPath: /csi-k3s
+          - name: plugin-dir-kubelet
+            mountPath: /csi-kubelet
+        command:
+          - sh
+          - -c
+          - |
+            # Check which registration directory exists and use it
+            if [ -d /registration-k3s ]; then
+              REGISTRATION_DIR="/registration-k3s"
+              PLUGIN_DIR="/csi-k3s"
+              KUBELET_PLUGINS_PATH="/var/lib/rancher/k3s/agent/kubelet/plugins_registry/rbd.csi.ceph.com-reg.sock"
+            elif [ -d /registration-kubelet ]; then
+              REGISTRATION_DIR="/registration-kubelet"
+              PLUGIN_DIR="/csi-kubelet"
+              KUBELET_PLUGINS_PATH="/var/lib/kubelet/plugins_registry/rbd.csi.ceph.com-reg.sock"
+            else
+              echo "No valid registration directory found"
+              exit 1
+            fi
+            
+            # Start the node-driver-registrar with the correct path
+            exec /usr/bin/node-driver-registrar \
+              --kubelet-registration-path="$KUBELET_PLUGINS_PATH" \
+              --v=2
       volumes:
-        - name: registration-dir
+        - name: registration-dir-k3s
           hostPath:
             path: /var/lib/rancher/k3s/agent/kubelet/plugins_registry
-            type: Directory
-        - name: plugin-dir
+            type: DirectoryOrCreate
+        - name: registration-dir-kubelet
+          hostPath:
+            path: /var/lib/kubelet/plugins_registry
+            type: DirectoryOrCreate
+        - name: plugin-dir-k3s
           hostPath:
             path: /var/lib/rancher/k3s/agent/kubelet/plugins
+            type: DirectoryOrCreate
+        - name: plugin-dir-kubelet
+          hostPath:
+            path: /var/lib/kubelet/plugins
             type: DirectoryOrCreate
         - name: kubelet-dir
           hostPath:
