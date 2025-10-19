@@ -44,7 +44,9 @@ spec:
     nodeplugin:
       hostNetwork: true
       hostPID: true
-      kubeletDir: /var/lib/rancher/k3s/agent/kubelet
+      # Use the canonical kubelet directory that k3s exposes (/var/lib/kubelet)
+      # The k3s specific path (/var/lib/rancher/k3s/agent/kubelet) is still mounted read-only for compatibility.
+      kubeletDir: /var/lib/kubelet
       imagePullSecrets:
         - name: ceph-secret
       plugin:
@@ -60,9 +62,12 @@ spec:
         volumeMounts:
           - name: plugin-dir
             mountPath: /csi
-          - name: kubelet-dir
-            mountPath: /var/lib/rancher/k3s/agent/kubelet
+          - name: kubelet-dir-canonical
+            mountPath: /var/lib/kubelet
             mountPropagation: Bidirectional
+          - name: kubelet-dir-k3s
+            mountPath: /var/lib/rancher/k3s/agent/kubelet
+            readOnly: true
           - name: sys
             mountPath: /sys
           - name: dev
@@ -72,7 +77,7 @@ spec:
             readOnly: true
       registrar:
         args:
-          - "--kubelet-registration-path=/var/lib/rancher/k3s/agent/kubelet/plugins_registry/rbd.csi.ceph.com-reg.sock"
+          - "--kubelet-registration-path=/var/lib/kubelet/plugins_registry/rbd.csi.ceph.com-reg.sock"
         volumeMounts:
           - name: registration-dir
             mountPath: /registration
@@ -84,13 +89,17 @@ spec:
       volumes:
         - name: registration-dir
           hostPath:
-            path: /var/lib/rancher/k3s/agent/kubelet/plugins_registry
+            path: /var/lib/kubelet/plugins_registry
             type: DirectoryOrCreate
         - name: plugin-dir
           hostPath:
-            path: /var/lib/rancher/k3s/agent/kubelet/plugins
+            path: /var/lib/kubelet/plugins
             type: DirectoryOrCreate
-        - name: kubelet-dir
+        - name: kubelet-dir-canonical
+          hostPath:
+            path: /var/lib/kubelet
+            type: Directory
+        - name: kubelet-dir-k3s
           hostPath:
             path: /var/lib/rancher/k3s/agent/kubelet
             type: Directory
