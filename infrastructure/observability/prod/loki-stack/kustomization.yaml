@@ -14,4 +14,4 @@ patches:
         values:
           loki:
             persistence:
-              storageClass: csi-rbd-sc
+              storageClass: nfs-rwx
