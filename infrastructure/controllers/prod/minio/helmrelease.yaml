@@ -21,6 +21,9 @@ spec:
       size: 100Gi
       storageClass: nfs-rwx
     drivesPerNode: 1
+    # Force MinIO to run only on ARM64 nodes to avoid architecture mismatch
+    nodeSelector:
+      kubernetes.io/arch: arm64
     resources:
       requests:
         memory: 512Mi
