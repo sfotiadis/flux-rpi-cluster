@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: helmreboot-operator
+  namespace: flux-system
+spec:
+  values:
+    controllerManager:
+      manager:
+        image:
+          # Use latest available version in dev for testing
+          tag: "*"

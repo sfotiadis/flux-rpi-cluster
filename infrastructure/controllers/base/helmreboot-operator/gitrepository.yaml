@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: helmreboot-operator
+  namespace: flux-system
+spec:
+  interval: 5m
+  url: https://github.com/sfotiadis/helmreboot-operator
+  ref:
+    tag: v0.1.0
