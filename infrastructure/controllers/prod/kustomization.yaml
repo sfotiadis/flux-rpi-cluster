@@ -3,8 +3,9 @@ kind: Kustomization
 resources:
   - ../base/cert-manager
   - ../base/metallb
-  - helmreboot-operator
   - ../base/storage/nfs
+  - helmreboot-operator
+  - strimzi-kafka-operator
   - cloudnative-pg
   - ingress-nginx
   - mariadb-operator

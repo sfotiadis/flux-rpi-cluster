@@ -4,6 +4,7 @@ resources:
   - ../base/cert-manager
   - ../base/metallb
   - helmreboot-operator
+  - strimzi-kafka-operator
   - provisioner
   - ingress-nginx
   - cloudnative-pg
