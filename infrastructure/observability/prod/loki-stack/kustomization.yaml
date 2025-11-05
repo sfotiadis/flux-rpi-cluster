@@ -1,5 +1,6 @@
 resources:
   - ../../base/loki-stack
+  - loki-minio-secret.yaml
 
 patches:
   - target:
