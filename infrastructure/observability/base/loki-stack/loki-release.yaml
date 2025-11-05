@@ -44,6 +44,10 @@ spec:
               url: http://loki:{{ .Values.loki.server.http_listen_port }}
               version: 1
               isDefault: false
+    global:
+      extraEnvFrom:
+        - secretRef:
+            name: loki-minio-secret
     loki:
       auth_enabled: false
       serviceMonitor:
@@ -77,14 +81,7 @@ spec:
           admin: loki
         type: s3
         s3:
-          s3: null
           endpoint: minio.minio:9000
-          secretAccessKey:
-            name: loki-minio-secret
-            key: secret-access-key
-          accessKeyId:
-            name: loki-minio-secret
-            key: access-key-id
           s3ForcePathStyle: true
           insecure: true
           http_config: {}
