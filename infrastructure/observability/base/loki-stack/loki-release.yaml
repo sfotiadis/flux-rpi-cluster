@@ -70,12 +70,30 @@ spec:
             index:
               prefix: loki_index_
               period: 24h
+      storage:
+        bucketNames:
+          chunks: loki
+          ruler: loki
+          admin: loki
+        type: s3
+        s3:
+          s3: null
+          endpoint: minio.minio:9000
+          secretAccessKey:
+            name: loki-minio-secret
+            key: secret-access-key
+          accessKeyId:
+            name: loki-minio-secret
+            key: access-key-id
+          s3ForcePathStyle: true
+          insecure: true
+          http_config: {}
       pattern_ingester:
         enabled: true
       ruler:
         enable_api: true
     minio:
-      enabled: true
+      enabled: false
     lokiCanary:
       enabled: false
     deploymentMode: SingleBinary
